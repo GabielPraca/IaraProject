@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Iara/DatabaseManager/bin/Release/DatabaseManager.pdb
+/Iara/DatabaseManager/bin/Release/DatabaseManager.dll.mdb
+/Iara/DatabaseManager/bin/Release/DatabaseManager.dll
+Iara/Iara/bin/Debug/DatabaseManager.dll

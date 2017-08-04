@@ -1,0 +1,212 @@
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\Iara.dll
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\Iara.pdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\Iara.Iara.apk
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\Iara.Iara-Signed.apk
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\Iara.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\Iara.dll
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\Iara.pdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\bin\Iara.Iara.apk
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\res\layout\main.xml
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\res\values\strings.xml
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\res\drawable\icon.png
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\res\drawable\icolock.png
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\res\drawable\icouser.png
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\R.cs.flag
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\uploadflags.txt
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\res\layout\registerfragment.xml
+C:\Users\Gabriel\Documents\Visual Studio 2017\Projects\Iara\Iara\bin\Debug\IaraModels.dll
+C:\Users\Gabriel\Documents\Visual Studio 2017\Projects\Iara\Iara\bin\Debug\IaraModels.pdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\SQLite-net.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\Iara.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\Java.Interop.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\Microsoft.CSharp.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\Mono.Android.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\Mono.CSharp.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\Mono.Data.Tds.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\mscorlib.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.ComponentModel.Composition.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.Core.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.Data.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.EnterpriseServices.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.IO.Compression.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.Net.Http.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.Numerics.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.Runtime.Serialization.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.ServiceModel.Internals.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.Transactions.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.Web.Services.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.Xml.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\bin\Debug\System.Xml.Linq.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\Iara.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\Java.Interop.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\Mono.Android.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\Mono.CSharp.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\Mono.Data.Tds.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\mscorlib.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\SQLite-net.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.ComponentModel.Composition.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.Core.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.Data.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.EnterpriseServices.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.IO.Compression.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.Net.Http.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.Numerics.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.Runtime.Serialization.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.Transactions.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.Web.Services.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.Xml.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\Iara\obj\Debug\Iara.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\Iara.csprojResolveAssemblyReference.cache
+C:\Iara\Iara\Iara\obj\Debug\XbdMerge\Xamarin.Android.Support.Compat.dll
+C:\Iara\Iara\Iara\obj\Debug\XbdMerge\Xamarin.Android.Support.Core.UI.dll
+C:\Iara\Iara\Iara\obj\Debug\XbdMerge\Xamarin.Android.Support.Core.Utils.dll
+C:\Iara\Iara\Iara\obj\Debug\XbdMerge\Xamarin.Android.Support.Media.Compat.dll
+C:\Iara\Iara\Iara\obj\Debug\XbdMerge\Xamarin.Android.Support.Fragment.dll
+C:\Iara\Iara\Iara\obj\Debug\XbdMerge\Xamarin.Android.Support.Transition.dll
+C:\Iara\Iara\Iara\obj\Debug\XbdMerge\Xamarin.Android.Support.v7.RecyclerView.dll
+C:\Iara\Iara\Iara\obj\Debug\XbdMerge\Xamarin.Android.Support.Vector.Drawable.dll
+C:\Iara\Iara\Iara\obj\Debug\XbdMerge\Xamarin.Android.Support.Animated.Vector.Drawable.dll
+C:\Iara\Iara\Iara\obj\Debug\XbdMerge\Xamarin.Android.Support.v7.AppCompat.dll
+C:\Iara\Iara\Iara\obj\Debug\XbdMerge\Xamarin.Android.Support.Design.dll
+C:\Iara\Iara\Iara\bin\Debug\Iara.dll
+C:\Iara\Iara\Iara\bin\Debug\Iara.pdb
+C:\Iara\Iara\Iara\bin\Debug\Iara.Iara.apk
+C:\Iara\Iara\Iara\bin\Debug\Iara.Iara-Signed.apk
+C:\Iara\Iara\Iara\bin\Debug\DatabaseManager.dll
+C:\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Animated.Vector.Drawable.dll
+C:\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Compat.dll
+C:\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Core.UI.dll
+C:\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Core.Utils.dll
+C:\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Design.dll
+C:\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Fragment.dll
+C:\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Media.Compat.dll
+C:\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Transition.dll
+C:\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.v7.AppCompat.dll
+C:\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.v7.RecyclerView.dll
+C:\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Vector.Drawable.dll
+C:\Iara\Iara\Iara\bin\Debug\DatabaseManager.pdb
+C:\Iara\Iara\Iara\obj\Debug\Iara.dll
+C:\Iara\Iara\Iara\obj\Debug\Iara.pdb
+C:\Iara\Iara\Iara\obj\Debug\android\bin\Iara.Iara.apk
+C:\Iara\Iara\Iara\obj\Debug\res\layout\root.xml
+C:\Iara\Iara\Iara\obj\Debug\res\layout\registerfragment.xml
+C:\Iara\Iara\Iara\obj\Debug\res\layout\item_menu.xml
+C:\Iara\Iara\Iara\obj\Debug\res\layout\registertask.xml
+C:\Iara\Iara\Iara\obj\Debug\res\layout\login.xml
+C:\Iara\Iara\Iara\obj\Debug\res\values\strings.xml
+C:\Iara\Iara\Iara\obj\Debug\res\drawable\icon.png
+C:\Iara\Iara\Iara\obj\Debug\res\drawable\icolock.png
+C:\Iara\Iara\Iara\obj\Debug\res\drawable\icouser.png
+C:\Iara\Iara\Iara\obj\Debug\res\drawable\icoemail.png
+C:\Iara\Iara\Iara\obj\Debug\res\drawable\icomenu.png
+C:\Iara\Iara\Iara\obj\Debug\res\raw\song.mp3
+C:\Iara\Iara\Iara\obj\Debug\res\layout\personaltask.xml
+C:\Iara\Iara\Iara\obj\Debug\R.cs.flag
+C:\Iara\Iara\Iara\obj\Debug\uploadflags.txt
+C:\Iara\Iara\Iara\bin\Debug\Iara.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\DatabaseManager.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\Java.Interop.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\Microsoft.CSharp.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\Mono.Android.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\Mono.CSharp.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\Mono.Data.Tds.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\mscorlib.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.ComponentModel.Composition.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.Core.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.Data.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.EnterpriseServices.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.IO.Compression.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.Net.Http.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.Numerics.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.Runtime.Serialization.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.ServiceModel.Internals.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.Transactions.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.Web.Services.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.Xml.dll.mdb
+C:\Iara\Iara\Iara\bin\Debug\System.Xml.Linq.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\DatabaseManager.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\Iara.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\Java.Interop.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\Mono.Android.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\Mono.CSharp.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\Mono.Data.Tds.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\mscorlib.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.ComponentModel.Composition.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.Core.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.Data.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.EnterpriseServices.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.IO.Compression.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.Net.Http.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.Numerics.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.Runtime.Serialization.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.Transactions.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.Web.Services.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.Xml.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
+C:\Iara\Iara\Iara\obj\Debug\Iara.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Iara.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Iara.pdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Iara.Iara.apk
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Iara.Iara-Signed.apk
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\DatabaseManager.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\FormsViewGroup.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Animated.Vector.Drawable.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Design.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.v4.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.v7.AppCompat.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.v7.CardView.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.v7.MediaRouter.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.v7.RecyclerView.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Android.Support.Vector.Drawable.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Core.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Platform.Android.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Platform.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Xaml.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\DatabaseManager.pdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\FormsViewGroup.pdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\FormsViewGroup.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Core.pdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Core.xml
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Core.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Platform.Android.pdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Xaml.pdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Xamarin.Forms.Xaml.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\Iara.csprojResolveAssemblyReference.cache
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\Iara.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\Iara.pdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\android\bin\Iara.Iara.apk
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\layout\root.xml
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\layout\registerfragment.xml
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\layout\item_menu.xml
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\layout\registertask.xml
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\layout\login.xml
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\values\strings.xml
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\drawable\icon.png
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\drawable\icolock.png
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\drawable\icouser.png
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\drawable\icoemail.png
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\drawable\icomenu.png
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\raw\song.mp3
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\layout\personaltask.xml
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\R.cs.flag
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\uploadflags.txt
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\DatabaseManager.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\bin\Debug\Iara.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\android\assets\DatabaseManager.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\android\assets\FormsViewGroup.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\android\assets\Iara.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\Iara\obj\Debug\res\layout\notificationfragment.xml

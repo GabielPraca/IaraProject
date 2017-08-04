@@ -1,0 +1,4 @@
+D:\Projetos\Visual Studio 2017\Iara\Iara\DatabaseManager\bin\Release\DatabaseManager.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\DatabaseManager\bin\Release\DatabaseManager.pdb
+D:\Projetos\Visual Studio 2017\Iara\Iara\DatabaseManager\obj\Release\DatabaseManager.dll
+D:\Projetos\Visual Studio 2017\Iara\Iara\DatabaseManager\obj\Release\DatabaseManager.pdb

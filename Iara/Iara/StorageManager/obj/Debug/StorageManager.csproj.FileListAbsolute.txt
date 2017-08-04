@@ -1,0 +1,13 @@
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\bin\Debug\StorageManager.dll
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\bin\Debug\StorageManager.pdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\bin\Debug\Xamarin.Forms.Platform.pdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\obj\Debug\StorageManager.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\obj\Debug\StorageManager.dll
+C:\Users\Gabriel\documents\visual studio 2017\Projects\Iara\StorageManager\obj\Debug\StorageManager.pdb

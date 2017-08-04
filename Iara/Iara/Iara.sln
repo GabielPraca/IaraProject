@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iara", "Iara\Iara.csproj", "{7261A11A-9F29-471C-8D2A-D2A8EE44B8B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseManager", "DatabaseManager\DatabaseManager.csproj", "{3405B7E6-5F8F-4A3A-B420-8B540D64C725}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7261A11A-9F29-471C-8D2A-D2A8EE44B8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7261A11A-9F29-471C-8D2A-D2A8EE44B8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7261A11A-9F29-471C-8D2A-D2A8EE44B8B4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7261A11A-9F29-471C-8D2A-D2A8EE44B8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7261A11A-9F29-471C-8D2A-D2A8EE44B8B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7261A11A-9F29-471C-8D2A-D2A8EE44B8B4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3405B7E6-5F8F-4A3A-B420-8B540D64C725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3405B7E6-5F8F-4A3A-B420-8B540D64C725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3405B7E6-5F8F-4A3A-B420-8B540D64C725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3405B7E6-5F8F-4A3A-B420-8B540D64C725}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

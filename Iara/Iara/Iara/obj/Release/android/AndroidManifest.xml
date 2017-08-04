@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Iara.Iara" android:versionCode="1" android:versionName="1.0">
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk android:minSdkVersion="16" />
+  <application android:label="Iara" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon">
+    <receiver android:name=".AlarmNotificationReceiver" />
+    <service android:name=".RingtonePlayingService"></service>
+    <receiver android:enabled="true" android:name="md57cbc051877f5a4faa21469a5d8b0b917.AlarmNotificationReceiver" />
+    <activity android:icon="@drawable/icon" android:label="Iara" android:screenOrientation="portrait" android:name="md57cbc051877f5a4faa21469a5d8b0b917.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="Registre uma Tarefa" android:parentActivityName="md57cbc051877f5a4faa21469a5d8b0b917.RootActivity" android:screenOrientation="portrait" android:name="md57cbc051877f5a4faa21469a5d8b0b917.RegisterTaskActivity" />
+    <activity android:label="Tarefas Agendadas" android:launchMode="singleTop" android:screenOrientation="portrait" android:name="md57cbc051877f5a4faa21469a5d8b0b917.RootActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="Iara.Iara.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+</manifest>

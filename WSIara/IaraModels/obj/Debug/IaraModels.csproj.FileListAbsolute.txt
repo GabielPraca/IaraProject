@@ -1,0 +1,4 @@
+C:\Projetos\C#\WSIara\IaraModels\bin\Debug\IaraModels.dll
+C:\Projetos\C#\WSIara\IaraModels\bin\Debug\IaraModels.pdb
+C:\Projetos\C#\WSIara\IaraModels\obj\Debug\IaraModels.dll
+C:\Projetos\C#\WSIara\IaraModels\obj\Debug\IaraModels.pdb

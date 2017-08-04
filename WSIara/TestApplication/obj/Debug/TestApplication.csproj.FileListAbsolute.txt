@@ -1,0 +1,8 @@
+C:\Projetos\C#\WSIara\WSIara\TestApplication\bin\Debug\TestApplication.exe.config
+C:\Projetos\C#\WSIara\WSIara\TestApplication\bin\Debug\TestApplication.exe
+C:\Projetos\C#\WSIara\WSIara\TestApplication\bin\Debug\TestApplication.pdb
+C:\Projetos\C#\WSIara\WSIara\TestApplication\obj\Debug\TestApplication.csprojResolveAssemblyReference.cache
+C:\Projetos\C#\WSIara\WSIara\TestApplication\obj\Debug\TestApplication.Properties.Resources.resources
+C:\Projetos\C#\WSIara\WSIara\TestApplication\obj\Debug\TestApplication.csproj.GenerateResource.Cache
+C:\Projetos\C#\WSIara\WSIara\TestApplication\obj\Debug\TestApplication.exe
+C:\Projetos\C#\WSIara\WSIara\TestApplication\obj\Debug\TestApplication.pdb

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">Iara</string>
+    <string name="User">Usuário</string>
+    <string name="Password">Password</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+</resources>
