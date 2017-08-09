@@ -1,0 +1,10 @@
+G:\IaraProject\WSIara\IaraWrapper\obj\Debug\IaraWrapper.csprojResolveAssemblyReference.cache
+G:\IaraProject\WSIara\IaraWrapper\bin\Debug\IaraWrapper.dll
+G:\IaraProject\WSIara\IaraWrapper\bin\Debug\IaraWrapper.pdb
+G:\IaraProject\WSIara\IaraWrapper\bin\Debug\IaraModels.dll
+G:\IaraProject\WSIara\IaraWrapper\bin\Debug\Newtonsoft.Json.dll
+G:\IaraProject\WSIara\IaraWrapper\bin\Debug\System.Net.Http.Formatting.dll
+G:\IaraProject\WSIara\IaraWrapper\bin\Debug\Newtonsoft.Json.xml
+G:\IaraProject\WSIara\IaraWrapper\bin\Debug\System.Net.Http.Formatting.xml
+G:\IaraProject\WSIara\IaraWrapper\obj\Debug\IaraWrapper.dll
+G:\IaraProject\WSIara\IaraWrapper\obj\Debug\IaraWrapper.pdb

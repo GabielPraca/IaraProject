@@ -17,7 +17,7 @@ namespace DatabaseManager
             personalTask = new DAO.PersonalTask();
         }
 
-        #region user
+        #region User
         public static string CreateUser(SQLiteModels.User user)
         {
             return userMethods.SaveObject(user);

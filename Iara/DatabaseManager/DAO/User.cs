@@ -50,8 +50,6 @@ namespace DatabaseManager.DAO
         {
             try
             {
-                //CreateTable();
-
                 var all = Config.databaseConn.Table<SQLiteModels.User>().AsEnumerable<SQLiteModels.User>().Where(o => o.email == user.email).ToList();
 
                 if (all.Count == 0)

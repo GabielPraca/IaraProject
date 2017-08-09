@@ -6,3 +6,6 @@ C:\Projetos\C#\WSIara\WSIara\TestApplication\obj\Debug\TestApplication.Propertie
 C:\Projetos\C#\WSIara\WSIara\TestApplication\obj\Debug\TestApplication.csproj.GenerateResource.Cache
 C:\Projetos\C#\WSIara\WSIara\TestApplication\obj\Debug\TestApplication.exe
 C:\Projetos\C#\WSIara\WSIara\TestApplication\obj\Debug\TestApplication.pdb
+G:\IaraProject\WSIara\TestApplication\bin\Debug\TestApplication.exe.config
+G:\IaraProject\WSIara\TestApplication\obj\Debug\TestApplication.exe
+G:\IaraProject\WSIara\TestApplication\obj\Debug\TestApplication.pdb

@@ -1,0 +1,11 @@
+D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\bin\Debug\IaraDAO.dll.config
+D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\bin\Debug\IaraDAO.dll
+D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\bin\Debug\IaraDAO.pdb
+D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\bin\Debug\EntityFramework.dll
+D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\bin\Debug\IaraModels.dll
+D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\bin\Debug\EntityFramework.xml
+D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.csprojResolveAssemblyReference.cache
+D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.dll
+D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.pdb

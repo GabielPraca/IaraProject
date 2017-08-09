@@ -9,7 +9,7 @@ namespace DatabaseManager
     public interface IPersonalTask
     {
         bool DeletePersonalTask(SQLiteModels.PersonalTask task); 
-         List<SQLiteModels.PersonalTask> GetAllActivePersonalTasks(string email);
+        List<SQLiteModels.PersonalTask> GetAllActivePersonalTasks(string email);
         List<SQLiteModels.PersonalTask> GetAllPersonalTasks(string email);
         SQLiteModels.PersonalTask GetPersonalTask(string key);
         string SaveObject(SQLiteModels.PersonalTask task);
