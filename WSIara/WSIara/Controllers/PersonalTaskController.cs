@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace WSIara.Controllers
 {
-    [RoutePrefix("api/PersonalTask/")]
+    [RoutePrefix("api/IaraDB/PersonalTask")]
     public class PersonalTaskController : ApiController
     {
         IaraDAO.IPersonalTaskRepository ptr;

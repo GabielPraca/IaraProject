@@ -18,7 +18,22 @@ namespace IaraDAO
 
         public bool DeleteUser(string email)
         {
-            throw new NotImplementedException();
+            try
+            {
+                User delUser = GetUser(email);
+                if (delUser != null)
+                {
+                    _Context.Entry(delUser).State = System.Data.Entity.EntityState.Deleted;
+                    _Context.SaveChanges();
+
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public List<User> GetAllUsers()
@@ -56,13 +71,9 @@ namespace IaraDAO
         {
             try
             {
-                User userToUpdate = _Context.User.Where(u => u.email == user.email).FirstOrDefault();
-
-                if (userToUpdate != null)
+                if (user != null)
                 {
-                    userToUpdate = user;
-                    _Context.User.Attach(userToUpdate);
-                    _Context.Entry(userToUpdate).State = System.Data.Entity.EntityState.Modified;
+                    _Context.Entry(user).State = System.Data.Entity.EntityState.Modified;
                     _Context.SaveChanges();
 
                     return true;

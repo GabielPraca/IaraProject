@@ -9,3 +9,14 @@ D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\bin\Debug\EntityFramew
 D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.csprojResolveAssemblyReference.cache
 D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.dll
 D:\Projetos\Visual Studio 2017\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.pdb
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Debug\IaraDAO.dll.config
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Debug\IaraDAO.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Debug\IaraDAO.pdb
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Debug\EntityFramework.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Debug\IaraModels.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Debug\EntityFramework.xml
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.csprojResolveAssemblyReference.cache
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.pdb

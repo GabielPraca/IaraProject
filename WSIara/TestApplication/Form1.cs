@@ -18,24 +18,6 @@ namespace TestApplication
             InitializeComponent();
         }
 
-        private void btnSaveUser_Click(object sender, EventArgs e)
-        {
-            IaraDAO.IaraWrapper iw = new IaraDAO.IaraWrapper(String.Empty, String.Empty);
-            lblAddUser.Text = iw.SaveUser(CreateUser()).Result.ToString();
-        }
-
-        private void btnGetUser_Click(object sender, EventArgs e)
-        {
-            IaraDAO.IaraWrapper iw = new IaraDAO.IaraWrapper(txtEmail.Text, txtPass.Text);
-            lblGetUserRet.Text = iw.GetUser(txtEmail.Text).Result.userName;
-        }
-
-        private void btnDelUser_Click(object sender, EventArgs e)
-        {
-            IaraDAO.IaraWrapper iw = new IaraDAO.IaraWrapper(txtEmail.Text, txtPass.Text);
-            lblGetUserRet.Text = iw.DeleteUser(txtEmail.Text).Result.ToString();
-        }
-
         private IaraModels.User CreateUser()
         {
             return new IaraModels.User()
@@ -50,10 +32,28 @@ namespace TestApplication
             };
         }
 
+        private void btnSaveUser_Click(object sender, EventArgs e)
+        {
+            IaraWrapper.IaraWrapper iw = new IaraWrapper.IaraWrapper(String.Empty, String.Empty);
+            lblAddUser.Text = iw.SaveUser(CreateUser()).ToString();
+        }
+
+        private void btnGetUser_Click(object sender, EventArgs e)
+        {
+            IaraWrapper.IaraWrapper iw = new IaraWrapper.IaraWrapper(txtEmail.Text, txtPass.Text);
+            lblGetUserRet.Text = iw.GetUser(txtEmail.Text).userName;
+        }
+
+        private void btnDelUser_Click(object sender, EventArgs e)
+        {
+            IaraWrapper.IaraWrapper iw = new IaraWrapper.IaraWrapper(txtEmailDel.Text, txtPassDel.Text);
+            lblDelUserRet.Text = iw.DeleteUser(txtEmailDel.Text).ToString();
+        }
+
         private void btnGetUserToUpdt_Click(object sender, EventArgs e)
         {
-            IaraDAO.IaraWrapper iw = new IaraDAO.IaraWrapper(txtEmailUpdt.Text, txtPassUpdt.Text);
-            user = iw.GetUser(txtEmail.Text).Result;
+            IaraWrapper.IaraWrapper iw = new IaraWrapper.IaraWrapper(txtEmailUpdt.Text, txtPassUpdt.Text);
+            user = iw.GetUser(txtEmailUpdt.Text);
 
             lblEmailDesc.Text = user.email;
             lblUserNameDesc.Text = user.userName;
@@ -63,9 +63,9 @@ namespace TestApplication
         {
             if (user != null && txtUserName.Text != String.Empty)
             {
-                IaraDAO.IaraWrapper iw = new IaraDAO.IaraWrapper(txtEmailUpdt.Text, txtPassUpdt.Text);
+                IaraWrapper.IaraWrapper iw = new IaraWrapper.IaraWrapper(txtEmailUpdt.Text, txtPassUpdt.Text);
                 user.userName = txtUserName.Text;
-                lblUpdtUserRet.Text = iw.UpdateUser(user).Result.ToString();
+                lblUpdtUserRet.Text = iw.UpdateUser(user).ToString();
             }
         }
     }

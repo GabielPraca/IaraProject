@@ -5,36 +5,39 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace IaraDAO
+namespace IaraWrapper
 {
     public class IaraWrapper
     {
-        private static HttpClient client = new HttpClient();
-        private static string apiPersonalTaskPath = "/PersonalTask";
-        private static string apiUserPath = "/User";
+        private HttpClient client = new HttpClient();
+        private static string apiMainPath = "api/IaraDB";
+        private static string apiPersonalTaskPath = String.Concat(apiMainPath, "/PersonalTask");
+        private static string apiUserPath = String.Concat(apiMainPath, "/User");
         public static bool authenticated = false;
         private static string _auth = String.Empty;
 
         public IaraWrapper(string email, string pass)
         {
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Add("Cache-Control", "no-cache, no-store, must-revalidate");
-            client.DefaultRequestHeaders.Add("Pragma", "no-cache");
+            client.BaseAddress = new Uri("http://localhost:53795/");
+            client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            //client.DefaultRequestHeaders.Add("Cache-Control", "no-cache, no-store, must-revalidate");
+            //client.DefaultRequestHeaders.Add("Pragma", "no-cache");
 
-            _auth = UserAuthentication(email, pass).Result;
+            _auth = UserAuthentication(email, pass);
         }
 
         #region User
-        public async Task<bool> SaveUser(IaraModels.User user)
+        public bool SaveUser(IaraModels.User user)
         {
             try
             {
-                HttpResponseMessage response = await client.PostAsJsonAsync(Path.Combine(apiUserPath, "SaveUser"), user);
+                HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiUserPath, "SaveUser"), user).Result;
                 response.EnsureSuccessStatusCode();
                 if (response.IsSuccessStatusCode)
                 {
                     if (!authenticated)
-                        _auth = UserAuthentication(user.email, user.password).Result;
+                        _auth = UserAuthentication(user.email, user.password);
 
                     return true;
                 }
@@ -49,13 +52,13 @@ namespace IaraDAO
             }
         }
 
-        public async Task<bool> UpdateUser(IaraModels.User user)
+        public bool UpdateUser(IaraModels.User user)
         {
             try
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = await client.PostAsJsonAsync(Path.Combine(apiUserPath, "UpdateUser"), user);
+                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiUserPath, "UpdateUser"), user).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -74,13 +77,13 @@ namespace IaraDAO
             }
         }
 
-        public async Task<bool> DeleteUser(string email)
+        public bool DeleteUser(string email)
         {
             try
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = await client.GetAsync(Path.Combine(apiUserPath, email, "DeleteUser"));
+                    HttpResponseMessage response = client.GetAsync(Path.Combine(apiUserPath, email, "DeleteUser")).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -99,11 +102,11 @@ namespace IaraDAO
             }
         }
 
-        public async Task<IaraModels.User> GetUser(string email)
+        public IaraModels.User GetUser(string email)
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync(Path.Combine(apiUserPath, email, "GetUser"));
+                HttpResponseMessage response = client.GetAsync(Path.Combine(apiUserPath, email, "GetUser")).Result;
                 response.EnsureSuccessStatusCode();
                 if (response.IsSuccessStatusCode)
                 {
@@ -120,11 +123,11 @@ namespace IaraDAO
             }
         }
 
-        public async Task<string> UserAuthentication(string email, string pass)
+        public string UserAuthentication(string email, string pass)
         {
             try
             {
-                IaraModels.User ret = await GetUser(email);
+                IaraModels.User ret = this.GetUser(email);
 
                 if (ret == null)
                 {
@@ -142,7 +145,7 @@ namespace IaraDAO
                     return String.Empty;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 authenticated = false;
                 return "Erro";
@@ -151,13 +154,13 @@ namespace IaraDAO
         #endregion
 
         #region PersonalTask
-        public async Task<bool> SavePersonalTask(IaraModels.PersonalTask task)
+        public bool SavePersonalTask(IaraModels.PersonalTask task)
         {
             try
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = await client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "SavePersonalTask"), task);
+                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "SavePersonalTask"), task).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -176,14 +179,14 @@ namespace IaraDAO
             }
         }
 
-        public async Task<List<IaraModels.PersonalTask>> GetAllPersonalTasks(string email)
+        public List<IaraModels.PersonalTask> GetAllPersonalTasks(string email)
         {
             try
             {
 
                 if (authenticated)
                 {
-                    HttpResponseMessage response = await client.GetAsync(Path.Combine(apiPersonalTaskPath, email, "GetAllPersonalTasks"));
+                    HttpResponseMessage response = client.GetAsync(Path.Combine(apiPersonalTaskPath, email, "GetAllPersonalTasks")).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -202,13 +205,13 @@ namespace IaraDAO
             }
         }
 
-        public async Task<List<IaraModels.PersonalTask>> GetAllActivePersonalTasks(string email)
+        public List<IaraModels.PersonalTask> GetAllActivePersonalTasks(string email)
         {
             try
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = await client.GetAsync(Path.Combine(apiPersonalTaskPath, email, "GetAllActivePersonalTasks"));
+                    HttpResponseMessage response = client.GetAsync(Path.Combine(apiPersonalTaskPath, email, "GetAllActivePersonalTasks")).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -227,13 +230,13 @@ namespace IaraDAO
             }
         }
 
-        public async Task<bool> UpdatePersonalTask(IaraModels.PersonalTask task)
+        public bool UpdatePersonalTask(IaraModels.PersonalTask task)
         {
             try
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = await client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "UpdatePersonalTask"), task);
+                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "UpdatePersonalTask"), task).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -252,13 +255,13 @@ namespace IaraDAO
             }
         }
 
-        public async Task<bool> DeletePersonalTask(IaraModels.PersonalTask task)
+        public bool DeletePersonalTask(IaraModels.PersonalTask task)
         {
             try
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = await client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "DeletePersonalTask"), task);
+                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "DeletePersonalTask"), task).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {

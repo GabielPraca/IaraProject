@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace WSIara.Controllers
 {
-    [RoutePrefix("api/User/")]
+    [RoutePrefix("api/IaraDB/User")]
     public class UserController : ApiController
     {
         IaraDAO.IUserRepository ur;
