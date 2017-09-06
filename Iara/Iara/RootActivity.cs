@@ -84,17 +84,6 @@ namespace Iara
             //Inicia o Timer       
             tSync.Enabled = true;
             #endregion
-
-            //#region Alarm
-            ////Instancia do timer
-            //System.Timers.Timer tAlarm = new System.Timers.Timer();
-            ////chama o timer
-            //tAlarm.Elapsed += new ElapsedEventHandler(Workers.AlarmWorker.Run);
-            ////1 min
-            //tAlarm.Interval = 100000;
-            ////Inicia o Timer       
-            //tAlarm.Enabled = true;
-            //#endregion
         }
 
         public override void OnWindowFocusChanged(bool hasFocus)
@@ -208,16 +197,7 @@ namespace Iara
         {
             int pos = (int)(((Button)sender).GetTag(Resource.Id.btnDel));
             mPersonalTasks[pos].deleted = true;
-            
-            //Cancela o Alarm
-            //var pendingIntent = PendingIntent.GetBroadcast(Application.Context, 0, new Intent(Application.Context, typeof(AlarmNotificationReceiver)), PendingIntentFlags.NoCreate);
-            //AlarmManager alarm = (AlarmManager)Application.Context.GetSystemService(Context.AlarmService);
-            //alarm.Cancel(pendingIntent);
-
-            //TaskTransporter.needRefresh = true;
-
             BODatabaseManager.UpdatePersonalTask(mPersonalTasks[pos]);
-
             UpdateData(BODatabaseManager.GetAllActivePersonalTasks(Config.loggedUser.email));
         }
 
