@@ -4,6 +4,9 @@ using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using System.Linq;
+using DatabaseManager;
+using SQLiteModels;
 
 namespace Iara
 {
@@ -12,8 +15,6 @@ namespace Iara
         private Button btnCancelAlarm;
         private TextView txtTitle;
         private TextView txtExtra;
-
-
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -36,8 +37,23 @@ namespace Iara
         private void btnCancelAlarm_Click(object sender, EventArgs e)
         {
             AlarmRingtone.StopRingtone(TaskTransporter.context);
+            DeleteTask();
             TaskTransporter.ResetTaskTransporter();
+
             Activity.FragmentManager.BeginTransaction().Remove(this).Commit();
+        }
+
+        private void DeleteTask()
+        {
+            SQLiteModels.PersonalTask pt = BODatabaseManager.GetAllActivePersonalTasks(
+                   Config.loggedUser.email).Where(p => p.description == TaskTransporter.itens[0] &&
+                   String.Concat(p.taskDay.Hour.ToString("00"), ":", p.taskDay.Minute.ToString("00")) == TaskTransporter.itens[1]).FirstOrDefault();
+
+            if(pt != null)
+            {
+                pt.deleted = true;
+                BODatabaseManager.UpdatePersonalTask(pt);
+            }
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)

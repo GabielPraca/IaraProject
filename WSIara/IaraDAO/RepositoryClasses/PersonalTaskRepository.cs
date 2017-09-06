@@ -19,7 +19,27 @@ namespace IaraDAO
         {
             try
             {
+                personalTask.synchronizedInToServer = true;
                 _Context.PersonalTask.Add(personalTask);
+                _Context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool SavePersonalTasks(List<PersonalTask> personalTasks)
+        {
+            try
+            {
+                foreach(PersonalTask pt in personalTasks)
+                {
+                    pt.synchronizedInToServer = true;
+                }
+
+                _Context.PersonalTask.AddRange(personalTasks);
                 _Context.SaveChanges();
                 return true;
             }
@@ -35,6 +55,23 @@ namespace IaraDAO
             {
                 _Context.PersonalTask.Remove(personalTask);
                 _Context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool DeletePersonalTasks(List<PersonalTask> personalTasks)
+        {
+            try
+            {
+                foreach(PersonalTask pt in personalTasks)
+                {
+                    _Context.PersonalTask.Remove(pt);
+                    _Context.SaveChanges();
+                }
                 return true;
             }
             catch (Exception)

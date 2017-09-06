@@ -175,7 +175,9 @@ C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\Microsoft.CodeDom.Providers.DotNetC
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\Microsoft.Web.Infrastructure.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\Newtonsoft.Json.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Net.Http.Extensions.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Net.Http.Formatting.dll
+C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Net.Http.Primitives.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Web.Helpers.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Web.Http.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Web.Http.WebHost.dll
@@ -189,6 +191,9 @@ C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\WebGrease.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\Antlr3.Runtime.pdb
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\EntityFramework.xml
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\EntityFramework.SqlServer.xml
+C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\IaraDAO.pdb
+C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\IaraDAO.dll.config
+C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\IaraModels.pdb
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\Microsoft.AI.DependencyCollector.xml
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\Microsoft.AI.Web.xml
@@ -210,5 +215,3 @@ C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Web.WebPages.Razor.xml
 C:\Projetos\C#\IaraProject\WSIara\WSIara\obj\Debug\WSIara.csprojResolveAssemblyReference.cache
 C:\Projetos\C#\IaraProject\WSIara\WSIara\obj\Debug\WSIara.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\obj\Debug\WSIara.pdb
-C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Net.Http.Extensions.dll
-C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Net.Http.Primitives.dll

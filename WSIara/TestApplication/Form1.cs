@@ -22,12 +22,12 @@ namespace TestApplication
         {
             return new IaraModels.User()
             {
-                email = "teste@teste.com",
-                password = "teste",
+                email = "q@q.com",
+                password = "q",
                 synchronizedInToMobile = true,
                 synchronizedInToServer = true,
                 updtDTime = DateTime.Now,
-                userName = "teste",
+                userName = "q",
                 deleted = false
             };
         }

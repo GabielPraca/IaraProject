@@ -19,10 +19,8 @@ namespace IaraWrapper
         public IaraWrapper(string email, string pass)
         {
             client.DefaultRequestHeaders.Accept.Clear();
-            client.BaseAddress = new Uri("http://localhost:53795/");
+            client.BaseAddress = new Uri("http://NOTE-GAB/IaraAPI/");//localhost:53795
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            //client.DefaultRequestHeaders.Add("Cache-Control", "no-cache, no-store, must-revalidate");
-            //client.DefaultRequestHeaders.Add("Pragma", "no-cache");
 
             _auth = UserAuthentication(email, pass);
         }
@@ -117,9 +115,9 @@ namespace IaraWrapper
                     return null;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return null;
+                throw new Exception(ex.Message);
             }
         }
 
@@ -148,7 +146,7 @@ namespace IaraWrapper
             catch (Exception ex)
             {
                 authenticated = false;
-                return "Erro";
+                throw ex;
             }
         }
         #endregion
@@ -161,6 +159,31 @@ namespace IaraWrapper
                 if (authenticated)
                 {
                     HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "SavePersonalTask"), task).Result;
+                    response.EnsureSuccessStatusCode();
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool SavePersonalTasks(List<IaraModels.PersonalTask> tasks)
+        {
+            try
+            {
+                if (authenticated)
+                {
+                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "SavePersonalTasks"), tasks).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -262,6 +285,31 @@ namespace IaraWrapper
                 if (authenticated)
                 {
                     HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "DeletePersonalTask"), task).Result;
+                    response.EnsureSuccessStatusCode();
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool DeletePersonalTasks(List<IaraModels.PersonalTask> tasks)
+        {
+            try
+            {
+                if (authenticated)
+                {
+                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "DeletePersonalTasks"), tasks).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {

@@ -24,11 +24,25 @@ namespace WSIara.Controllers
             return ptr.SavePersonalTask(personalTask);
         }
 
+        [Route("SavePersonalTasks")]
+        [HttpPost]
+        public bool SavePersonalTasks([FromBody] List<IaraModels.PersonalTask> personalTasks)
+        {
+            return ptr.SavePersonalTasks(personalTasks);
+        }
+
         [Route("DeletePersonalTask")]
         [HttpPost]
         public bool DeletePersonalTask([FromBody] IaraModels.PersonalTask personalTask)
         {
             return ptr.DeletePersonalTask(personalTask);
+        }
+
+        [Route("DeletePersonalTasks")]
+        [HttpPost]
+        public bool DeletePersonalTasks([FromBody] List<IaraModels.PersonalTask> personalTasks)
+        {
+            return ptr.DeletePersonalTasks(personalTasks);
         }
 
         [Route("UpdatePersonalTask")]

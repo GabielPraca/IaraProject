@@ -59,21 +59,49 @@ namespace Iara
 
             else if(edtPass.Text == edtConfirmPass.Text)
             {
-                SQLiteModels.User user = new SQLiteModels.User();
+                IaraWrapper.IaraWrapper iw = new IaraWrapper.IaraWrapper(String.Empty, String.Empty);
 
+                SQLiteModels.User user = new SQLiteModels.User();
                 user.email = edtEmail.Text;
                 user.userName = edtUser.Text;
                 user.password = edtPass.Text;
                 user.updtDTime = DateTime.Now;
+                user.synchronizedInToMobile = true;
+                user.synchronizedInToServer = true;
 
-                if(DatabaseManager.BODatabaseManager.CreateUser(user) != DatabaseManager.DatabaseAnswer.Sucess.ToString())
+                IaraModels.User bdUser = new IaraModels.User
                 {
-                    Toast.MakeText(Activity.ApplicationContext, "Usuário já existe", ToastLength.Short).Show();
+                    email = edtEmail.Text,
+                    userName = edtUser.Text,
+                    password = edtPass.Text,
+                    updtDTime = DateTime.Now,
+                    synchronizedInToMobile = true,
+                    synchronizedInToServer = true
+                };
+
+                bool? res = iw.SaveUser(bdUser);
+                if (res != null)
+                {
+                    if ((bool)res)
+                    {
+                        if (DatabaseManager.BODatabaseManager.CreateUser(user) != DatabaseManager.DatabaseAnswer.Sucess.ToString())
+                        {
+                            Toast.MakeText(Activity.ApplicationContext, "Usuário já existe", ToastLength.Short).Show();
+                        }
+                        else
+                        {
+                            Toast.MakeText(Activity.ApplicationContext, "Registrado com sucesso", ToastLength.Short).Show();
+                        }
+                    }
+                    else
+                    {
+                        Toast.MakeText(Activity.ApplicationContext, "Não foi possivel registrar, verifique sua conexão", ToastLength.Short).Show();
+                    }
                 }
                 else
                 {
-                    Toast.MakeText(Activity.ApplicationContext, "Registrado com sucesso", ToastLength.Short).Show();
-                }                
+                    Toast.MakeText(Activity.ApplicationContext, "Usuário já existe", ToastLength.Short).Show();
+                }
             }
             else
             {

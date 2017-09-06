@@ -23,15 +23,17 @@ namespace DatabaseManager.DAO
             }
         }
 
-        public bool DeletePersonalTask(SQLiteModels.PersonalTask task)
+        public bool DeletePersonalTasks(List<SQLiteModels.PersonalTask> tasks)
         {
             try
             {
-                task.deleted = true;
-                UpdateObject(task);
+                foreach(SQLiteModels.PersonalTask pt in tasks)
+                {
+                    Config.databaseConn.Delete(pt);
+                }
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -75,9 +77,14 @@ namespace DatabaseManager.DAO
                 var all = Config.databaseConn.Table<SQLiteModels.PersonalTask>().AsEnumerable().Where(o => o.personalTaskID == task.personalTaskID).ToList();
 
                 if (all.Count == 0)
+                {
+                    task.synchronizedInToMobile = true;
                     Config.databaseConn.Insert(task);
+                }
                 else
+                {
                     return DatabaseAnswer.Error.ToString();
+                }
 
                 return DatabaseAnswer.Sucess.ToString();
             }
@@ -87,7 +94,7 @@ namespace DatabaseManager.DAO
             }
         }
 
-        public string UpdateObject(SQLiteModels.PersonalTask task)
+        public string UpdatePersonalTask(SQLiteModels.PersonalTask task)
         {
             try
             {

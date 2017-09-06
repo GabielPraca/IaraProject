@@ -24,5 +24,20 @@
         <category android:name="mono.android.intent.category.SEPPUKU.Iara.Iara" />
       </intent-filter>
     </receiver>
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
   </application>
 </manifest>

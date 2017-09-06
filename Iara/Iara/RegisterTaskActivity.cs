@@ -246,10 +246,10 @@ namespace Iara
             Intent myIntent;
             PendingIntent pendingIntent;
 
-            myIntent = new Intent(this, typeof(AlarmNotificationReceiver));
+            myIntent = new Intent(Application.Context, typeof(AlarmNotificationReceiver));
 
             myIntent.PutStringArrayListExtra("task", BuildtaskItens(personalTask).ToArray<string>());
-            pendingIntent = PendingIntent.GetBroadcast(this, 0, myIntent, PendingIntentFlags.UpdateCurrent);
+            pendingIntent = PendingIntent.GetBroadcast(Application.Context, 0, myIntent, PendingIntentFlags.UpdateCurrent);
 
             if (actualTaskType == eTaskType.month)
             {
@@ -257,17 +257,6 @@ namespace Iara
                 long timeMillis = (long)(utcAlarmTime - Jan1st1970).TotalMilliseconds;
 
                 SetAlarm(alarm, timeMillis, pendingIntent);
-
-                #region OLD
-                //if (!ckRep.Checked)
-                //{
-                //    alarm.Set(AlarmType.RtcWakeup, timeMillis, pendingIntent);
-                //}
-                //else
-                //{
-                //    alarm.SetRepeating(AlarmType.RtcWakeup, timeMillis, 24 * 60 * 60 * 1000, pendingIntent);
-                //}
-#endregion
             }
             else
             {
@@ -315,7 +304,6 @@ namespace Iara
             if (ckRep.Checked && weekly)
             {
                 alarm.SetRepeating(AlarmType.RtcWakeup, alarmTime, AlarmManager.IntervalDay * 7, pendingIntent);
-                //alarm.SetRepeating(AlarmType.RtcWakeup, alarmTime, 24 * 60 * 60 * 1000, pendingIntent);
             }
             else
             {

@@ -58,6 +58,11 @@ namespace DatabaseManager
             return personalTask.SaveObject(task);
         }
 
+        public static bool DeletePersonalTasks(List<SQLiteModels.PersonalTask> tasks)
+        {
+            return personalTask.DeletePersonalTasks(tasks);
+        }
+
         public static List<SQLiteModels.PersonalTask> GetAllPersonalTask(string email)
         {
             return personalTask.GetAllPersonalTasks(email);
@@ -68,9 +73,9 @@ namespace DatabaseManager
             return personalTask.GetAllActivePersonalTasks(email).OrderBy(p => p.taskDay).ToList();
         }
 
-        public static string UpdateObject(SQLiteModels.PersonalTask task)
+        public static string UpdatePersonalTask(SQLiteModels.PersonalTask task)
         {
-            return personalTask.UpdateObject(task);
+            return personalTask.UpdatePersonalTask(task);
         }
         #endregion
     }

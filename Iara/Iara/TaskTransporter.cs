@@ -11,6 +11,8 @@ namespace Iara
         public static Context context;
         public static List<string> itens;
 
+        //public static bool needRefresh = false;
+
         internal static void ResetTaskTransporter()
         {
             isActive = false;
@@ -22,7 +24,15 @@ namespace Iara
         {
             isActive = true;
             context = eContext;
-            itens = intent.GetStringArrayListExtra("task").ToList();
+
+            try
+            {
+                itens = intent.GetStringArrayListExtra("task").ToList();
+            }
+            catch (Exception)
+            {
+                //do nothing haha kludge
+            }
         }
     }
 }

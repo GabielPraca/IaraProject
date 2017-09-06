@@ -9,6 +9,9 @@ using Android.Content.PM;
 using Android.Support.V7.Widget;
 using System.Collections.Generic;
 using DatabaseManager;
+using System.Threading;
+using System.Timers;
+using Android.Content;
 
 namespace Iara
 {
@@ -66,7 +69,34 @@ namespace Iara
             mRecyclerView.SetAdapter(mAdapter);
             #endregion
 
+            InitializeWorkers();
         }
+
+        private void InitializeWorkers()
+        {
+            #region Sync
+            //Instancia do timer
+            System.Timers.Timer tSync = new System.Timers.Timer();
+            //chama o timer
+            tSync.Elapsed += new ElapsedEventHandler(Workers.DatabaseWorker.Run);
+            //1 min
+            tSync.Interval = 1000000;
+            //Inicia o Timer       
+            tSync.Enabled = true;
+            #endregion
+
+            //#region Alarm
+            ////Instancia do timer
+            //System.Timers.Timer tAlarm = new System.Timers.Timer();
+            ////chama o timer
+            //tAlarm.Elapsed += new ElapsedEventHandler(Workers.AlarmWorker.Run);
+            ////1 min
+            //tAlarm.Interval = 100000;
+            ////Inicia o Timer       
+            //tAlarm.Enabled = true;
+            //#endregion
+        }
+
         public override void OnWindowFocusChanged(bool hasFocus)
         {
             if (TaskTransporter.isActive)
@@ -88,7 +118,7 @@ namespace Iara
             switch (itemClickEventArgs.Position)
             {
                 case 0:
-                    StartActivity(typeof(NotificationFragment));
+                    //Iara.Workers.DatabaseWorker.Run();
                     break;
                 case 1:
                     StartActivity(typeof(RegisterTaskActivity));
@@ -103,7 +133,7 @@ namespace Iara
             m_Drawer.CloseDrawer(m_DrawerList);
         }
 
-        //Event de click no menu
+        //Evento de click no menu
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (m_Toggle.OnOptionsItemSelected(item))
@@ -113,24 +143,6 @@ namespace Iara
             return base.OnOptionsItemSelected(item);
         }
     }
-
-    public class MyScrollListener : RecyclerView.OnScrollListener
-    {
-        ////private RecyclerView.LayoutManager mLayoutManager;
-        //public RecyclerView.Adapter mAdapter;
-        ////List<SQLiteModels.PersonalTask> mPersonalTasks;
-
-        //public override void OnScrollStateChanged(RecyclerView recyclerView, int newState)
-        //{
-        //}
-
-        //public override void OnScrolled(RecyclerView recyclerView, int dx, int dy)
-        //{
-        //        //RecyclerAdapter controlAdapter = (RecyclerAdapter)recyclerView.GetAdapter();
-        //        //controlAdapter.UpdateData(DatabaseManager.BODatabaseManager.GetAllPersonalTask(Config.loggedUser.email));
-        //}
-    }
-
 
     public class RecyclerAdapter : RecyclerView.Adapter
     {
@@ -196,7 +208,15 @@ namespace Iara
         {
             int pos = (int)(((Button)sender).GetTag(Resource.Id.btnDel));
             mPersonalTasks[pos].deleted = true;
-            BODatabaseManager.UpdateObject(mPersonalTasks[pos]);
+            
+            //Cancela o Alarm
+            //var pendingIntent = PendingIntent.GetBroadcast(Application.Context, 0, new Intent(Application.Context, typeof(AlarmNotificationReceiver)), PendingIntentFlags.NoCreate);
+            //AlarmManager alarm = (AlarmManager)Application.Context.GetSystemService(Context.AlarmService);
+            //alarm.Cancel(pendingIntent);
+
+            //TaskTransporter.needRefresh = true;
+
+            BODatabaseManager.UpdatePersonalTask(mPersonalTasks[pos]);
 
             UpdateData(BODatabaseManager.GetAllActivePersonalTasks(Config.loggedUser.email));
         }

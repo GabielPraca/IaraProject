@@ -8,6 +8,5 @@ G:\IaraProject\WSIara\IaraModels\obj\Debug\IaraModels.dll
 G:\IaraProject\WSIara\IaraModels\obj\Debug\IaraModels.pdb
 C:\Projetos\C#\IaraProject\WSIara\IaraModels\bin\Debug\IaraModels.dll
 C:\Projetos\C#\IaraProject\WSIara\IaraModels\bin\Debug\IaraModels.pdb
-C:\Projetos\C#\IaraProject\WSIara\IaraModels\obj\Debug\IaraModels.csprojResolveAssemblyReference.cache
 C:\Projetos\C#\IaraProject\WSIara\IaraModels\obj\Debug\IaraModels.dll
 C:\Projetos\C#\IaraProject\WSIara\IaraModels\obj\Debug\IaraModels.pdb
