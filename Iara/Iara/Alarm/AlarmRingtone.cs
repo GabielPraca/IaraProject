@@ -32,6 +32,8 @@ namespace Iara
             if (context != null && song != null)
             {
                 song.Stop();
+                song.Reset();
+                song.Release();
                 song = null;
             }
         }

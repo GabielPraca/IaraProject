@@ -53,7 +53,8 @@ namespace IaraDAO
         {
             try
             {
-                _Context.PersonalTask.Remove(personalTask);
+                _Context.PersonalTask.Attach(personalTask);
+                _Context.Entry(personalTask).State = System.Data.Entity.EntityState.Deleted;
                 _Context.SaveChanges();
                 return true;
             }
@@ -69,7 +70,8 @@ namespace IaraDAO
             {
                 foreach(PersonalTask pt in personalTasks)
                 {
-                    _Context.PersonalTask.Remove(pt);
+                    _Context.PersonalTask.Attach(pt);
+                    _Context.Entry(pt).State = System.Data.Entity.EntityState.Deleted;
                     _Context.SaveChanges();
                 }
                 return true;

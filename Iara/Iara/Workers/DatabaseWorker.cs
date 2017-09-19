@@ -11,19 +11,32 @@ namespace Iara.Workers
     public static class DatabaseWorker
     {
         private static IaraWrapper.IaraWrapper iw = null;
+        private static bool running = false;
 
         public static void Run(object source, ElapsedEventArgs e)
         {
-                iw = new IaraWrapper.IaraWrapper(Config.loggedUser.email, Config.loggedUser.password);
+            try
+            {
+                if (!running)
+                {
+                    running = true;
+                    iw = new IaraWrapper.IaraWrapper(Config.loggedUser.email, Config.loggedUser.password);
 
-                //Sincroniza do local para o WS
-                SynchronizeToServer();
+                    //Sincroniza do local para o WS
+                    SynchronizeToServer();
 
-                //Sincroniza do server para o local
-                SynchronizeToLocal();
+                    //Sincroniza do server para o local
+                    SynchronizeToLocal();
 
-                //Efetiva a deleção
-                EffectiveDeletion();
+                    //Efetiva a deleção
+                    EffectiveDeletion();
+                    running = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                running = false;
+            }
         }
 
         private static void SynchronizeToServer()
@@ -42,6 +55,7 @@ namespace Iara.Workers
                 {
                     email = pt.email,
                     deleted = pt.deleted,
+                    finalized = pt.finalized,
                     description = pt.description,
                     repeat = pt.repeat,
                     synchronizedInToServer = pt.synchronizedInToServer,
@@ -92,6 +106,7 @@ namespace Iara.Workers
                     {
                         email = pt.email,
                         deleted = pt.deleted,
+                        finalized = pt.finalized,
                         description = pt.description,
                         repeat = pt.repeat,
                         synchronizedInToServer = pt.synchronizedInToServer,

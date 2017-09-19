@@ -25,6 +25,7 @@ namespace IaraModels
 
         //controls
         public bool deleted { get; set; }
+        public bool finalized { get; set; }
         public bool synchronizedInToMobile { get; set; }
         public bool synchronizedInToServer { get; set; }
     }

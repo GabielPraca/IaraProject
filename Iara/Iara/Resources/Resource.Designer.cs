@@ -2775,14 +2775,14 @@ namespace Iara
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0900e8
-			public const int ComponentMonth = 2131296488;
-			
-			// aapt resource value: 0x7f0900d7
-			public const int ComponentWeek = 2131296471;
+			// aapt resource value: 0x7f0900ea
+			public const int ComponentMonth = 2131296490;
 			
 			// aapt resource value: 0x7f0900d9
-			public const int LL1 = 2131296473;
+			public const int ComponentWeek = 2131296473;
+			
+			// aapt resource value: 0x7f0900db
+			public const int LL1 = 2131296475;
 			
 			// aapt resource value: 0x7f0900a4
 			public const int action0 = 2131296420;
@@ -2874,26 +2874,32 @@ namespace Iara
 			// aapt resource value: 0x7f0900bb
 			public const int btnCancelAlarm = 2131296443;
 			
-			// aapt resource value: 0x7f0900ca
-			public const int btnDel = 2131296458;
+			// aapt resource value: 0x7f0900cc
+			public const int btnDel = 2131296460;
+			
+			// aapt resource value: 0x7f0900cb
+			public const int btnFinish = 2131296459;
 			
 			// aapt resource value: 0x7f090085
 			public const int btnLogin = 2131296389;
 			
-			// aapt resource value: 0x7f0900d5
-			public const int btnMonth = 2131296469;
+			// aapt resource value: 0x7f0900d7
+			public const int btnMonth = 2131296471;
 			
-			// aapt resource value: 0x7f0900d2
-			public const int btnRegister = 2131296466;
+			// aapt resource value: 0x7f0900d4
+			public const int btnRegister = 2131296468;
 			
-			// aapt resource value: 0x7f0900ec
-			public const int btnSaveTask = 2131296492;
+			// aapt resource value: 0x7f0900ee
+			public const int btnSaveTask = 2131296494;
 			
-			// aapt resource value: 0x7f0900d6
-			public const int btnWeek = 2131296470;
+			// aapt resource value: 0x7f0900d8
+			public const int btnWeek = 2131296472;
 			
 			// aapt resource value: 0x7f09004b
 			public const int buttonPanel = 2131296331;
+			
+			// aapt resource value: 0x7f0900ca
+			public const int buttons = 2131296458;
 			
 			// aapt resource value: 0x7f0900a5
 			public const int cancel_action = 2131296421;
@@ -2913,29 +2919,29 @@ namespace Iara
 			// aapt resource value: 0x7f0900ad
 			public const int chronometer = 2131296429;
 			
-			// aapt resource value: 0x7f0900e5
-			public const int ckFri = 2131296485;
-			
-			// aapt resource value: 0x7f0900dd
-			public const int ckMon = 2131296477;
-			
-			// aapt resource value: 0x7f0900d8
-			public const int ckRep = 2131296472;
-			
 			// aapt resource value: 0x7f0900e7
-			public const int ckSat = 2131296487;
-			
-			// aapt resource value: 0x7f0900db
-			public const int ckSun = 2131296475;
-			
-			// aapt resource value: 0x7f0900e3
-			public const int ckThu = 2131296483;
+			public const int ckFri = 2131296487;
 			
 			// aapt resource value: 0x7f0900df
-			public const int ckTue = 2131296479;
+			public const int ckMon = 2131296479;
+			
+			// aapt resource value: 0x7f0900da
+			public const int ckRep = 2131296474;
+			
+			// aapt resource value: 0x7f0900e9
+			public const int ckSat = 2131296489;
+			
+			// aapt resource value: 0x7f0900dd
+			public const int ckSun = 2131296477;
+			
+			// aapt resource value: 0x7f0900e5
+			public const int ckThu = 2131296485;
 			
 			// aapt resource value: 0x7f0900e1
-			public const int ckWed = 2131296481;
+			public const int ckTue = 2131296481;
+			
+			// aapt resource value: 0x7f0900e3
+			public const int ckWed = 2131296483;
 			
 			// aapt resource value: 0x7f090039
 			public const int clip_horizontal = 2131296313;
@@ -2952,8 +2958,8 @@ namespace Iara
 			// aapt resource value: 0x7f09004e
 			public const int contentPanel = 2131296334;
 			
-			// aapt resource value: 0x7f0900ee
-			public const int content_frame = 2131296494;
+			// aapt resource value: 0x7f0900f0
+			public const int content_frame = 2131296496;
 			
 			// aapt resource value: 0x7f090076
 			public const int coordinator = 2131296374;
@@ -2991,17 +2997,17 @@ namespace Iara
 			// aapt resource value: 0x7f090012
 			public const int disableHome = 2131296274;
 			
-			// aapt resource value: 0x7f0900ed
-			public const int drawer_layout = 2131296493;
+			// aapt resource value: 0x7f0900ef
+			public const int drawer_layout = 2131296495;
 			
 			// aapt resource value: 0x7f090066
 			public const int edit_query = 2131296358;
 			
-			// aapt resource value: 0x7f0900d1
-			public const int edtConfirmPassword = 2131296465;
+			// aapt resource value: 0x7f0900d3
+			public const int edtConfirmPassword = 2131296467;
 			
-			// aapt resource value: 0x7f0900eb
-			public const int edtDesc = 2131296491;
+			// aapt resource value: 0x7f0900ed
+			public const int edtDesc = 2131296493;
 			
 			// aapt resource value: 0x7f090083
 			public const int edtEmail = 2131296387;
@@ -3009,11 +3015,11 @@ namespace Iara
 			// aapt resource value: 0x7f090084
 			public const int edtPass = 2131296388;
 			
-			// aapt resource value: 0x7f0900cf
-			public const int edtPassword = 2131296463;
+			// aapt resource value: 0x7f0900d1
+			public const int edtPassword = 2131296465;
 			
-			// aapt resource value: 0x7f0900cd
-			public const int edtUser = 2131296461;
+			// aapt resource value: 0x7f0900cf
+			public const int edtUser = 2131296463;
 			
 			// aapt resource value: 0x7f090021
 			public const int end = 2131296289;
@@ -3078,8 +3084,8 @@ namespace Iara
 			// aapt resource value: 0x7f090034
 			public const int left = 2131296308;
 			
-			// aapt resource value: 0x7f0900ef
-			public const int left_drawer = 2131296495;
+			// aapt resource value: 0x7f0900f1
+			public const int left_drawer = 2131296497;
 			
 			// aapt resource value: 0x7f0900b3
 			public const int line1 = 2131296435;
@@ -3093,29 +3099,29 @@ namespace Iara
 			// aapt resource value: 0x7f090081
 			public const int linearLayout1 = 2131296385;
 			
-			// aapt resource value: 0x7f0900da
-			public const int linearLayout2 = 2131296474;
-			
 			// aapt resource value: 0x7f0900dc
-			public const int linearLayout3 = 2131296476;
+			public const int linearLayout2 = 2131296476;
 			
 			// aapt resource value: 0x7f0900de
-			public const int linearLayout4 = 2131296478;
+			public const int linearLayout3 = 2131296478;
 			
 			// aapt resource value: 0x7f0900e0
-			public const int linearLayout5 = 2131296480;
+			public const int linearLayout4 = 2131296480;
 			
 			// aapt resource value: 0x7f0900e2
-			public const int linearLayout6 = 2131296482;
+			public const int linearLayout5 = 2131296482;
 			
 			// aapt resource value: 0x7f0900e4
-			public const int linearLayout7 = 2131296484;
+			public const int linearLayout6 = 2131296484;
 			
 			// aapt resource value: 0x7f0900e6
-			public const int linearLayout8 = 2131296486;
+			public const int linearLayout7 = 2131296486;
 			
-			// aapt resource value: 0x7f0900d4
-			public const int linearLayout9 = 2131296468;
+			// aapt resource value: 0x7f0900e8
+			public const int linearLayout8 = 2131296488;
+			
+			// aapt resource value: 0x7f0900d6
+			public const int linearLayout9 = 2131296470;
 			
 			// aapt resource value: 0x7f09000f
 			public const int listMode = 2131296271;
@@ -3123,8 +3129,8 @@ namespace Iara
 			// aapt resource value: 0x7f090048
 			public const int list_item = 2131296328;
 			
-			// aapt resource value: 0x7f0900f1
-			public const int masked = 2131296497;
+			// aapt resource value: 0x7f0900f3
+			public const int masked = 2131296499;
 			
 			// aapt resource value: 0x7f0900a7
 			public const int media_actions = 2131296423;
@@ -3417,8 +3423,8 @@ namespace Iara
 			// aapt resource value: 0x7f09000b
 			public const int transition_scene_layoutid_cache = 2131296267;
 			
-			// aapt resource value: 0x7f0900d0
-			public const int txtConfirmPassword = 2131296464;
+			// aapt resource value: 0x7f0900d2
+			public const int txtConfirmPassword = 2131296466;
 			
 			// aapt resource value: 0x7f090082
 			public const int txtCreateAccount = 2131296386;
@@ -3429,8 +3435,8 @@ namespace Iara
 			// aapt resource value: 0x7f0900be
 			public const int txtDesc = 2131296446;
 			
-			// aapt resource value: 0x7f0900cb
-			public const int txtEmail = 2131296459;
+			// aapt resource value: 0x7f0900cd
+			public const int txtEmail = 2131296461;
 			
 			// aapt resource value: 0x7f0900ba
 			public const int txtExtra = 2131296442;
@@ -3444,14 +3450,14 @@ namespace Iara
 			// aapt resource value: 0x7f0900c4
 			public const int txtMon = 2131296452;
 			
-			// aapt resource value: 0x7f0900ea
-			public const int txtMonth = 2131296490;
+			// aapt resource value: 0x7f0900ec
+			public const int txtMonth = 2131296492;
 			
-			// aapt resource value: 0x7f0900e9
-			public const int txtMonthDesc = 2131296489;
+			// aapt resource value: 0x7f0900eb
+			public const int txtMonthDesc = 2131296491;
 			
-			// aapt resource value: 0x7f0900ce
-			public const int txtPassword = 2131296462;
+			// aapt resource value: 0x7f0900d0
+			public const int txtPassword = 2131296464;
 			
 			// aapt resource value: 0x7f090086
 			public const int txtRegister = 2131296390;
@@ -3465,8 +3471,8 @@ namespace Iara
 			// aapt resource value: 0x7f0900c7
 			public const int txtThu = 2131296455;
 			
-			// aapt resource value: 0x7f0900d3
-			public const int txtTime = 2131296467;
+			// aapt resource value: 0x7f0900d5
+			public const int txtTime = 2131296469;
 			
 			// aapt resource value: 0x7f0900b9
 			public const int txtTitle = 2131296441;
@@ -3474,8 +3480,8 @@ namespace Iara
 			// aapt resource value: 0x7f0900c5
 			public const int txtTue = 2131296453;
 			
-			// aapt resource value: 0x7f0900cc
-			public const int txtUser = 2131296460;
+			// aapt resource value: 0x7f0900ce
+			public const int txtUser = 2131296462;
 			
 			// aapt resource value: 0x7f0900c6
 			public const int txtWed = 2131296454;
@@ -3489,8 +3495,8 @@ namespace Iara
 			// aapt resource value: 0x7f09000e
 			public const int view_offset_helper = 2131296270;
 			
-			// aapt resource value: 0x7f0900f0
-			public const int visible = 2131296496;
+			// aapt resource value: 0x7f0900f2
+			public const int visible = 2131296498;
 			
 			// aapt resource value: 0x7f090099
 			public const int volume_item_container = 2131296409;
@@ -3830,23 +3836,20 @@ namespace Iara
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f0a003f
-			public const int ApplicationName = 2131361855;
-			
-			// aapt resource value: 0x7f0a0043
-			public const int Close = 2131361859;
-			
 			// aapt resource value: 0x7f0a003e
-			public const int Hello = 2131361854;
+			public const int ApplicationName = 2131361854;
 			
 			// aapt resource value: 0x7f0a0042
-			public const int Open = 2131361858;
+			public const int Close = 2131361858;
 			
 			// aapt resource value: 0x7f0a0041
-			public const int Password = 2131361857;
+			public const int Open = 2131361857;
 			
 			// aapt resource value: 0x7f0a0040
-			public const int User = 2131361856;
+			public const int Password = 2131361856;
+			
+			// aapt resource value: 0x7f0a003f
+			public const int User = 2131361855;
 			
 			// aapt resource value: 0x7f0a0015
 			public const int abc_action_bar_home_description = 2131361813;

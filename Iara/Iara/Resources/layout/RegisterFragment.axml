@@ -73,7 +73,7 @@
         p1:drawablePadding="10dp"
         p1:maxLength="50"
         p1:selectAllOnFocus="true"
-        tools:text="@string/User"
+        tools:text="User"
         tools:visibility="visible"
         p1:background="#ffffff"
         p1:textColor="#000000"

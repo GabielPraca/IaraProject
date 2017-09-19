@@ -19,3 +19,4 @@ C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Debug\EntityFramework.xml
 C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Debug\EntityFramework.SqlServer.xml
 C:\Projetos\C#\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.dll
 C:\Projetos\C#\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.pdb
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\obj\Debug\IaraDAO.csprojResolveAssemblyReference.cache

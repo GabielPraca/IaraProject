@@ -21,7 +21,7 @@ namespace Iara
                        Config.loggedUser.email).Where(p => p.description == TaskTransporter.itens[0] &&
                        string.Concat(p.taskDay.Hour.ToString("00"), ":", p.taskDay.Minute.ToString("00")) == TaskTransporter.itens[1]).FirstOrDefault();
 
-                if (pt != null)
+                if (pt != null && !pt.finalized)
                 {
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
 
@@ -39,7 +39,8 @@ namespace Iara
                         .SetContentInfo(itens[1])
                         .Build();
 
-                    AlarmRingtone.PlayRingtone(context);
+                    AlarmRingtone.PlayRingtone(Application.Context);
+                    //18-09-2017 AlarmRingtone.PlayRingtone(context);
 
                     NotificationManager manager = (NotificationManager)context.GetSystemService(Context.NotificationService);
                     manager.Notify(1, builder.Build());

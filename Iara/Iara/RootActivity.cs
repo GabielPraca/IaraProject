@@ -80,7 +80,7 @@ namespace Iara
             //chama o timer
             tSync.Elapsed += new ElapsedEventHandler(Workers.DatabaseWorker.Run);
             //1 min
-            tSync.Interval = 1000000;
+            tSync.Interval = 60000;//100000;
             //Inicia o Timer       
             tSync.Enabled = true;
             #endregion
@@ -158,6 +158,7 @@ namespace Iara
             public TextView mTxtSat { get; set; }
 
             public Button mBtnDel { get; set; }
+            public Button mBtnFinish { get; set; }
 
             public MyView(View view) : base(view)
             {
@@ -167,7 +168,8 @@ namespace Iara
 
         public static class TagButtonControl
         {
-            public static int buttonCount;
+            public static int buttonCountDel;
+            public static int buttonCountFinish;
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
@@ -187,9 +189,25 @@ namespace Iara
             TextView txtSat = row.FindViewById<TextView>(Resource.Id.txtSat);
 
             Button btnDel = row.FindViewById<Button>(Resource.Id.btnDel);
+            Button btnFinish = row.FindViewById<Button>(Resource.Id.btnFinish);
             btnDel.Click += btnDel_Click;
+            btnFinish.Click += btnFinish_Click;
 
-            MyView view = new MyView(row) { mDesc = txtDesc, mHour = txtHour, mDate = txtDate, mTxtSun = txtSun, mTxtMon = txtMon, mTxtTue = txtTue, mTxtWed = txtWed, mTxtThu = txtThu, mTxtFri = txtFri, mTxtSat = txtSat, mBtnDel = btnDel };
+            MyView view = new MyView(row)
+            {
+                mDesc = txtDesc,
+                mHour = txtHour,
+                mDate = txtDate,
+                mTxtSun = txtSun,
+                mTxtMon = txtMon,
+                mTxtTue = txtTue,
+                mTxtWed = txtWed,
+                mTxtThu = txtThu,
+                mTxtFri = txtFri,
+                mTxtSat = txtSat,
+                mBtnDel = btnDel,
+                mBtnFinish = btnFinish
+            };
             return view;
         }
 
@@ -199,16 +217,52 @@ namespace Iara
             mPersonalTasks[pos].deleted = true;
             BODatabaseManager.UpdatePersonalTask(mPersonalTasks[pos]);
             UpdateData(BODatabaseManager.GetAllActivePersonalTasks(Config.loggedUser.email));
+
+            AlarmRingtone.StopRingtone(Application.Context);
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            int pos = (int)(((Button)sender).GetTag(Resource.Id.btnFinish));
+            mPersonalTasks[pos].finalized = true;
+            BODatabaseManager.UpdatePersonalTask(mPersonalTasks[pos]);
+            UpdateData(BODatabaseManager.GetAllActivePersonalTasks(Config.loggedUser.email));
+
+            AlarmRingtone.StopRingtone(Application.Context);
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             MyView myHolder = holder as MyView;
+            //Finalizado
+            if (mPersonalTasks[position].finalized)
+            {
+                myHolder.mMainView.SetBackgroundColor(Android.Graphics.Color.LightGreen);
+            }
+            //Atrasado
+            else if (mPersonalTasks[position].taskDay < DateTime.Now)
+            {
+                myHolder.mMainView.SetBackgroundColor(Android.Graphics.Color.Salmon);
+            }
+            //No dia atual       
+            else if (mPersonalTasks[position].taskDay.Day == DateTime.Now.Day &&
+                         mPersonalTasks[position].taskDay.Month == DateTime.Now.Month &&
+                         mPersonalTasks[position].taskDay.Year == DateTime.Now.Year)
+            {
+                myHolder.mMainView.SetBackgroundColor(Android.Graphics.Color.Yellow);
+            }
+            //Distante
+            else
+            {
+                myHolder.mMainView.SetBackgroundColor(Android.Graphics.Color.WhiteSmoke);
+            }
+
             myHolder.mDesc.Text = mPersonalTasks[position].description;
             myHolder.mHour.Text = String.Concat(mPersonalTasks[position].taskDay.Hour.ToString("00"), ":", mPersonalTasks[position].taskDay.Minute.ToString("00"));
             myHolder.mDate.Text = mPersonalTasks[position].taskDay.ToShortDateString();
 
-            myHolder.mBtnDel.SetTag(Resource.Id.btnDel, TagButtonControl.buttonCount++);
+            myHolder.mBtnDel.SetTag(Resource.Id.btnDel, TagButtonControl.buttonCountDel++);
+            myHolder.mBtnFinish.SetTag(Resource.Id.btnFinish, TagButtonControl.buttonCountFinish++);
 
             if (mPersonalTasks[position].sun)
                 myHolder.mTxtSun.SetTextColor(Android.Graphics.Color.Black);
@@ -247,7 +301,8 @@ namespace Iara
 
         public void UpdateData(List<SQLiteModels.PersonalTask> pTasks)
         {
-            TagButtonControl.buttonCount = 0;
+            TagButtonControl.buttonCountDel = 0;
+            TagButtonControl.buttonCountFinish = 0;
             mPersonalTasks.Clear();
             mPersonalTasks.AddRange(pTasks);
             NotifyDataSetChanged();

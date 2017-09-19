@@ -22,6 +22,7 @@ namespace SQLiteModels
 
         //controls
         public bool deleted { get; set; }
+        public bool finalized { get; set; }
         public bool synchronizedInToMobile { get; set; }
         public bool synchronizedInToServer { get; set; }
 
@@ -40,8 +41,9 @@ namespace SQLiteModels
                                                  "taskDay={10}," +
                                                  "description={11}]" +
                                                  "deleted={12}" +
-                                                 "synchronizedInToMobile={13}" +
-                                                 "synchronizedInToServer={14}",
+                                                 "finalized={13}" +
+                                                 "synchronizedInToMobile={14}" +
+                                                 "synchronizedInToServer={15}",
                                                  personalTaskID,
                                                  email,
                                                  sun,
@@ -55,6 +57,7 @@ namespace SQLiteModels
                                                  taskDay,
                                                  description, 
                                                  deleted,
+                                                 finalized,
                                                  synchronizedInToMobile,
                                                  synchronizedInToServer);
         }   

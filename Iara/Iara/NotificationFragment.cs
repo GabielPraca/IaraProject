@@ -22,11 +22,11 @@ namespace Iara
             Config.loggedUser.email).Where(p => p.description == TaskTransporter.itens[0] &&
             String.Concat(p.taskDay.Hour.ToString("00"), ":", p.taskDay.Minute.ToString("00")) == TaskTransporter.itens[1]).FirstOrDefault();
 
-            if (pt != null)
+            if (pt != null && !pt.finalized)
             {
                 base.OnCreateView(inflater, container, savedInstanceState);
 
-                var view = inflater.Inflate(Resource.Layout.NotificationFragment, container, false);
+                var view = inflater.Inflate(Resource.Layout.NotificationFragment, container, true);//old false
 
                 btnCancelAlarm = view.FindViewById<Button>(Resource.Id.btnCancelAlarm);
                 btnCancelAlarm.Click += btnCancelAlarm_Click;
@@ -44,14 +44,15 @@ namespace Iara
 
         private void btnCancelAlarm_Click(object sender, EventArgs e)
         {
-            AlarmRingtone.StopRingtone(TaskTransporter.context);
-            DeleteTask();
+            //18-09-2017 AlarmRingtone.StopRingtone(TaskTransporter.context);
+            AlarmRingtone.StopRingtone(Application.Context);
+            FinishTask();
             TaskTransporter.ResetTaskTransporter();
 
             Activity.FragmentManager.BeginTransaction().Remove(this).Commit();
         }
 
-        private void DeleteTask()
+        private void FinishTask()
         {
             SQLiteModels.PersonalTask pt = BODatabaseManager.GetAllActivePersonalTasks(
                    Config.loggedUser.email).Where(p => p.description == TaskTransporter.itens[0] &&
@@ -59,7 +60,7 @@ namespace Iara
 
             if (pt != null)
             {
-                pt.deleted = true;
+                pt.finalized = true;
                 BODatabaseManager.UpdatePersonalTask(pt);
             }
         }

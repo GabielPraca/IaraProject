@@ -95,19 +95,78 @@ namespace Iara
 
             if (actualTaskType == eTaskType.week && ValidateTask())
             {
+                int day = 0;
+
+                //personalTask.sun = ckSun.Checked;
+                if (ckSun.Checked)
+                {
+                    personalTask.sun = ckSun.Checked;
+                    if(day == 0)
+                    {
+                        day = DateTime.Now.Day + GetNextWeekday(DayOfWeek.Sunday);
+                    }
+                }
+                //personalTask.mon = ckMon.Checked;
+                if (ckMon.Checked)
+                {
+                    personalTask.mon = ckMon.Checked;
+                    if (day == 0)
+                    {
+                        day = DateTime.Now.Day + GetNextWeekday(DayOfWeek.Monday);
+                    }
+                }
+                //personalTask.tue = ckTue.Checked;
+                if (ckTue.Checked)
+                {
+                    personalTask.tue = ckTue.Checked;
+                    if (day == 0)
+                    {
+                        day = DateTime.Now.Day + GetNextWeekday(DayOfWeek.Tuesday);
+                    }
+                }
+                //personalTask.wed = ckWed.Checked;
+                if (ckWed.Checked)
+                {
+                    personalTask.wed = ckWed.Checked;
+                    if (day == 0)
+                    {
+                        day = DateTime.Now.Day + GetNextWeekday(DayOfWeek.Wednesday);
+                    }
+                }
+                //personalTask.thu = ckThu.Checked;
+                if (ckThu.Checked)
+                {
+                    personalTask.thu = ckThu.Checked;
+                    if (day == 0)
+                    {
+                        day = DateTime.Now.Day + GetNextWeekday(DayOfWeek.Thursday);
+                    }
+                }
+                //personalTask.fri = ckFri.Checked;
+                if (ckFri.Checked)
+                {
+                    personalTask.fri = ckFri.Checked;
+                    if (day == 0)
+                    {
+                        day = DateTime.Now.Day + GetNextWeekday(DayOfWeek.Friday);
+                    }
+                }
+                //personalTask.sat = ckSat.Checked;
+                if (ckSat.Checked)
+                {
+                    personalTask.sat = ckSat.Checked;
+                    if (day == 0)
+                    {
+                        day = DateTime.Now.Day + GetNextWeekday(DayOfWeek.Saturday);
+                    }
+                }
+
                 dateSelected = new DateTime(DateTime.Now.Year,
                                             DateTime.Now.Month,
-                                            DateTime.Now.Day,
+                                            day,
                                             timeSelected.Hours,
                                             timeSelected.Minutes,
                                             timeSelected.Seconds);
-                personalTask.sun = ckSun.Checked;
-                personalTask.mon = ckMon.Checked;
-                personalTask.tue = ckTue.Checked;
-                personalTask.wed = ckWed.Checked;
-                personalTask.thu = ckThu.Checked;
-                personalTask.fri = ckFri.Checked;
-                personalTask.sat = ckSat.Checked;
 
                 personalTask.description = edtDesc.Text;
                 personalTask.email = Config.loggedUser.email;
@@ -140,6 +199,11 @@ namespace Iara
             StartAlarm(false, personalTask);
             Toast.MakeText(this.ApplicationContext, "Salvo", ToastLength.Short).Show();
             Finish();
+        }
+        public int GetNextWeekday(DayOfWeek day)
+        {
+            // The (... + 7) % 7 ensures we end up with a value in the range [0, 6]
+            return ((int)day - (int)DateTime.Now.DayOfWeek + 7) % 7;
         }
 
         private void btnMonth_Click(object sender, EventArgs e)
