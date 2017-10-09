@@ -80,7 +80,7 @@ namespace Iara
             //chama o timer
             tSync.Elapsed += new ElapsedEventHandler(Workers.DatabaseWorker.Run);
             //1 min
-            tSync.Interval = 60000;//100000;
+            tSync.Interval = 10000;//100000;
             //Inicia o Timer       
             tSync.Enabled = true;
             #endregion
@@ -168,10 +168,10 @@ namespace Iara
 
         public static class TagButtonControl
         {
-            public static int buttonCountDel;
-            public static int buttonCountFinish;
+            public static int buttonCountDel = 0;
+            public static int buttonCountFinish = 0;
         }
-
+        
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
             View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.PersonalTask, parent, false);
@@ -225,6 +225,7 @@ namespace Iara
         {
             int pos = (int)(((Button)sender).GetTag(Resource.Id.btnFinish));
             mPersonalTasks[pos].finalized = true;
+            mPersonalTasks[pos].synchronizedInToServer = false;
             BODatabaseManager.UpdatePersonalTask(mPersonalTasks[pos]);
             UpdateData(BODatabaseManager.GetAllActivePersonalTasks(Config.loggedUser.email));
 
@@ -240,7 +241,7 @@ namespace Iara
                 myHolder.mMainView.SetBackgroundColor(Android.Graphics.Color.LightGreen);
             }
             //Atrasado
-            else if (mPersonalTasks[position].taskDay < DateTime.Now)
+            else if (mPersonalTasks[position].taskDay < DateTime.Now && !mPersonalTasks[position].repeat)
             {
                 myHolder.mMainView.SetBackgroundColor(Android.Graphics.Color.Salmon);
             }
@@ -256,6 +257,12 @@ namespace Iara
             {
                 myHolder.mMainView.SetBackgroundColor(Android.Graphics.Color.WhiteSmoke);
             }
+            
+            //semanal repetição
+            if (mPersonalTasks[position].taskDay < DateTime.Now && mPersonalTasks[position].repeat)
+            {
+                myHolder.mMainView.SetBackgroundColor(Android.Graphics.Color.WhiteSmoke);
+            }
 
             myHolder.mDesc.Text = mPersonalTasks[position].description;
             myHolder.mHour.Text = String.Concat(mPersonalTasks[position].taskDay.Hour.ToString("00"), ":", mPersonalTasks[position].taskDay.Minute.ToString("00"));
@@ -264,34 +271,76 @@ namespace Iara
             myHolder.mBtnDel.SetTag(Resource.Id.btnDel, TagButtonControl.buttonCountDel++);
             myHolder.mBtnFinish.SetTag(Resource.Id.btnFinish, TagButtonControl.buttonCountFinish++);
 
+            bool weekly = false;
+
             if (mPersonalTasks[position].sun)
+            {
                 myHolder.mTxtSun.SetTextColor(Android.Graphics.Color.Black);
+                weekly = true;
+            }
             else
+            {
                 myHolder.mTxtSun.SetTextColor(Android.Graphics.Color.LightGray);
+            }
             if (mPersonalTasks[position].mon)
+            {
                 myHolder.mTxtMon.SetTextColor(Android.Graphics.Color.Black);
+                weekly = true;
+            }
             else
+            {
                 myHolder.mTxtMon.SetTextColor(Android.Graphics.Color.LightGray);
+            }
             if (mPersonalTasks[position].tue)
+            {
                 myHolder.mTxtTue.SetTextColor(Android.Graphics.Color.Black);
+                weekly = true;
+            }
             else
+            {
                 myHolder.mTxtTue.SetTextColor(Android.Graphics.Color.LightGray);
+            }
             if (mPersonalTasks[position].wed)
+            {
                 myHolder.mTxtWed.SetTextColor(Android.Graphics.Color.Black);
+                weekly = true;
+            }
             else
+            {
                 myHolder.mTxtWed.SetTextColor(Android.Graphics.Color.LightGray);
+            }
             if (mPersonalTasks[position].thu)
+            {
                 myHolder.mTxtThu.SetTextColor(Android.Graphics.Color.Black);
+                weekly = true;
+            }
             else
+            {
                 myHolder.mTxtThu.SetTextColor(Android.Graphics.Color.LightGray);
+            }
             if (mPersonalTasks[position].fri)
+            {
                 myHolder.mTxtFri.SetTextColor(Android.Graphics.Color.Black);
+                weekly = true;
+            }
             else
+            {
                 myHolder.mTxtFri.SetTextColor(Android.Graphics.Color.LightGray);
+            }
             if (mPersonalTasks[position].sat)
+            {
                 myHolder.mTxtSat.SetTextColor(Android.Graphics.Color.Black);
+                weekly = true;
+            }
             else
+            {
                 myHolder.mTxtSat.SetTextColor(Android.Graphics.Color.LightGray);
+            }
+
+            if (weekly)
+            {
+                myHolder.mDate.Text = "Semanal";
+            }
         }
 
         public override int ItemCount

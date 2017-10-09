@@ -31,14 +31,29 @@
         p1:textSize="15dp"
         p1:paddingTop="10dp"
         p1:gravity="center" />
-    <Button
-        p1:text="Encerrar"
+    <LinearLayout
+        p1:id="@+id/buttons"
         p1:layout_width="match_parent"
-        p1:layout_height="0dp"
-        p1:layout_weight="5"
-        p1:id="@+id/btnCancelAlarm"
-        p1:layout_marginRight="20dp"
-        p1:layout_marginLeft="20dp"
-        p1:background="#0f4a9a"
-        p1:layout_marginTop="10dp" />
+        p1:layout_height="wrap_content"
+        p1:orientation="horizontal"
+        p1:weightSum="50"
+        p1:paddingRight="0dp"
+        p1:layout_marginTop="25dp">
+        <Button
+            p1:text="Encerrar"
+            p1:id="@+id/btnCancelAlarm"
+            p1:background="#0f4a9a"
+            p1:gravity="center"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:layout_marginLeft="155dp" />
+        <Button
+            p1:text="Pendente"
+            p1:id="@+id/btnPending"
+            p1:background="#0f4a9a"
+            p1:gravity="center"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:layout_marginLeft="25dp" />
+    </LinearLayout>
 </LinearLayout>

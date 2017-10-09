@@ -32,14 +32,24 @@ namespace IaraDAO
 
         public bool SavePersonalTasks(List<PersonalTask> personalTasks)
         {
+            List<PersonalTask> ptToAdd = new List<PersonalTask>();
             try
             {
                 foreach(PersonalTask pt in personalTasks)
                 {
                     pt.synchronizedInToServer = true;
+                    var res = GetPersonalTask(pt);
+                    if (res != null)
+                    {
+                        UpdatePersonalTask(pt);
+                    }
+                    else
+                    {
+                        ptToAdd.Add(pt);
+                    }
                 }
 
-                _Context.PersonalTask.AddRange(personalTasks);
+                _Context.PersonalTask.AddRange(ptToAdd);
                 _Context.SaveChanges();
                 return true;
             }
@@ -86,13 +96,28 @@ namespace IaraDAO
         {
             try
             {
-                PersonalTask taskToUpdate = GetPersonalTask(personalTask);
-
-                if (taskToUpdate != null)
+                if (personalTask != null)
                 {
-                    taskToUpdate = personalTask;
-                    _Context.PersonalTask.Attach(taskToUpdate);
-                    _Context.Entry(taskToUpdate).State = System.Data.Entity.EntityState.Modified;
+                    var res = GetPersonalTask(personalTask);
+                    res.deleted = personalTask.deleted;
+                    res.description = personalTask.description;
+                    res.email = personalTask.email;
+                    res.finalized = personalTask.finalized;
+                    res.fri = personalTask.fri;
+                    res.mon = personalTask.mon;
+                    res.repeat = personalTask.repeat;
+                    res.sat = personalTask.sat;
+                    res.sun = personalTask.sun;
+                    res.synchronizedInToMobile = personalTask.synchronizedInToMobile;
+                    res.synchronizedInToServer = personalTask.synchronizedInToServer;
+                    res.taskDay = personalTask.taskDay;
+                    res.thu = personalTask.thu;
+                    res.tue = personalTask.tue;
+                    res.wed = personalTask.wed;
+
+                    //_Context.PersonalTask.Attach(res);
+                    //_Context.Entry(res).CurrentValues.SetValues(personalTask);
+                    _Context.Entry(res).State = System.Data.Entity.EntityState.Modified;
                     _Context.SaveChanges();
 
                     return true;

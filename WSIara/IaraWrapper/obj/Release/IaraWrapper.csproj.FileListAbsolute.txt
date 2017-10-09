@@ -1,0 +1,16 @@
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\IaraWrapper.dll.config
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\IaraWrapper.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\IaraWrapper.pdb
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\IaraModels.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\Newtonsoft.Json.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\System.Net.Http.Formatting.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\System.Web.Http.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\System.Web.Http.WebHost.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\IaraModels.pdb
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\Newtonsoft.Json.xml
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\System.Net.Http.Formatting.xml
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\System.Web.Http.xml
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Release\System.Web.Http.WebHost.xml
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\obj\Release\IaraWrapper.csprojResolveAssemblyReference.cache
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\obj\Release\IaraWrapper.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\obj\Release\IaraWrapper.pdb

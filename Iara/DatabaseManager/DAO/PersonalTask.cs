@@ -103,7 +103,28 @@ namespace DatabaseManager.DAO
                 if (all.Count.Equals(0))
                     return DatabaseAnswer.Error.ToString();
                 else
-                    Config.databaseConn.Update(task);
+                {
+                    SQLiteModels.PersonalTask ptToUpdt = GetAllActivePersonalTasks(task.email).Where(t => t.description == task.description &&
+                                                                                                     t.email == task.email && t.taskDay == task.taskDay).FirstOrDefault();
+
+                    ptToUpdt.deleted = task.deleted;
+                    ptToUpdt.description = task.description;
+                    ptToUpdt.email = task.email;
+                    ptToUpdt.finalized = task.finalized;
+                    ptToUpdt.fri = task.fri;
+                    ptToUpdt.mon = task.mon;
+                    ptToUpdt.repeat = task.repeat;
+                    ptToUpdt.sat = task.sat;
+                    ptToUpdt.sun = task.sun;
+                    ptToUpdt.synchronizedInToMobile = task.synchronizedInToMobile;
+                    ptToUpdt.synchronizedInToServer = task.synchronizedInToServer;
+                    ptToUpdt.taskDay = task.taskDay;
+                    ptToUpdt.thu = task.thu;
+                    ptToUpdt.tue = task.tue;
+                    ptToUpdt.wed = task.wed;
+
+                    Config.databaseConn.Update(ptToUpdt);
+                }
 
                 return DatabaseAnswer.Sucess.ToString();
 

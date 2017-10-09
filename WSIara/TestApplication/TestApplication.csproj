@@ -36,6 +36,10 @@
     <Reference Include="IaraModels">
       <HintPath>..\..\References\IaraModels.dll</HintPath>
     </Reference>
+    <Reference Include="IaraWrapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IaraWrapper\bin\Debug\IaraWrapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -82,12 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IaraWrapper\IaraWrapper.csproj">
-      <Project>{47d09b03-6c55-490a-b48e-17265f2c965e}</Project>
-      <Name>IaraWrapper</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

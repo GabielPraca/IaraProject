@@ -190,7 +190,7 @@ namespace Iara
                 personalTask.sat = false;
                 personalTask.description = edtDesc.Text;
                 personalTask.email = Config.loggedUser.email;
-                personalTask.repeat = false;
+                personalTask.repeat = ckRep.Checked;
                 personalTask.taskDay = dateSelected;
             }
 
@@ -315,52 +315,55 @@ namespace Iara
             myIntent.PutStringArrayListExtra("task", BuildtaskItens(personalTask).ToArray<string>());
             pendingIntent = PendingIntent.GetBroadcast(Application.Context, 0, myIntent, PendingIntentFlags.UpdateCurrent);
 
-            if (actualTaskType == eTaskType.month)
-            {
-                DateTime utcAlarmTime = TimeZoneInfo.ConvertTimeToUtc(new DateTime(personalTask.taskDay.Ticks, DateTimeKind.Local));
-                long timeMillis = (long)(utcAlarmTime - Jan1st1970).TotalMilliseconds;
+            SetAlarm(alarm, TimeMillis(personalTask), pendingIntent);
+            #region OLD
+            //if (actualTaskType == eTaskType.month)
+            //{
+            //    DateTime utcAlarmTime = TimeZoneInfo.ConvertTimeToUtc(new DateTime(personalTask.taskDay.Ticks, DateTimeKind.Local));
+            //    long timeMillis = (long)(utcAlarmTime - Jan1st1970).TotalMilliseconds;
 
-                SetAlarm(alarm, timeMillis, pendingIntent);
-            }
-            else
-            {
-                long alarmTime = 0;
-                if (ckSun.Checked)
-                {
-                    alarmTime = BuildCalendar(Calendar.Sunday, personalTask).TimeInMillis;
-                    SetAlarm(alarm, alarmTime, pendingIntent);
-                }
-                if (ckMon.Checked)
-                {
-                    alarmTime = BuildCalendar(Calendar.Monday, personalTask).TimeInMillis;
-                    SetAlarm(alarm, alarmTime, pendingIntent);
-                }
-                if (ckTue.Checked)
-                {
-                    alarmTime = BuildCalendar(Calendar.Tuesday, personalTask).TimeInMillis;
-                    SetAlarm(alarm, alarmTime, pendingIntent);
-                }
-                if (ckWed.Checked)
-                {
-                    alarmTime = BuildCalendar(Calendar.Wednesday, personalTask).TimeInMillis;
-                    SetAlarm(alarm, alarmTime, pendingIntent);
-                }
-                if (ckThu.Checked)
-                {
-                    alarmTime = BuildCalendar(Calendar.Thursday, personalTask).TimeInMillis;
-                    SetAlarm(alarm, alarmTime, pendingIntent);
-                }
-                if (ckFri.Checked)
-                {
-                    alarmTime = BuildCalendar(Calendar.Friday, personalTask).TimeInMillis;
-                    SetAlarm(alarm, alarmTime, pendingIntent);
-                }
-                if (ckSat.Checked)
-                {
-                    alarmTime = BuildCalendar(Calendar.Saturday, personalTask).TimeInMillis;
-                    SetAlarm(alarm, alarmTime, pendingIntent);
-                }
-            }
+            //    SetAlarm(alarm, timeMillis, pendingIntent);
+            //}
+            //else
+            //{
+            //    long alarmTime = 0;
+            //    if (ckSun.Checked)
+            //    {
+            //        alarmTime = BuildCalendar(DayOfWeek.Sunday, personalTask).TimeInMillis;
+            //        SetAlarm(alarm, alarmTime, pendingIntent);
+            //    }
+            //    if (ckMon.Checked)
+            //    {
+            //        alarmTime = BuildCalendar(DayOfWeek.Monday, personalTask).TimeInMillis;
+            //        SetAlarm(alarm, alarmTime, pendingIntent);
+            //    }
+            //    if (ckTue.Checked)
+            //    {
+            //        alarmTime = BuildCalendar(DayOfWeek.Tuesday, personalTask).TimeInMillis;
+            //        SetAlarm(alarm, alarmTime, pendingIntent);
+            //    }
+            //    if (ckWed.Checked)
+            //    {
+            //        alarmTime = BuildCalendar(DayOfWeek.Wednesday, personalTask).TimeInMillis;
+            //        SetAlarm(alarm, alarmTime, pendingIntent);
+            //    }
+            //    if (ckThu.Checked)
+            //    {
+            //        alarmTime = BuildCalendar(DayOfWeek.Thursday, personalTask).TimeInMillis;
+            //        SetAlarm(alarm, alarmTime, pendingIntent);
+            //    }
+            //    if (ckFri.Checked)
+            //    {
+            //        alarmTime = BuildCalendar(DayOfWeek.Friday, personalTask).TimeInMillis;
+            //        SetAlarm(alarm, alarmTime, pendingIntent);
+            //    }
+            //    if (ckSat.Checked)
+            //    {
+            //        alarmTime = BuildCalendar(DayOfWeek.Saturday, personalTask).TimeInMillis;
+            //        SetAlarm(alarm, alarmTime, pendingIntent);
+            //    }
+            //}
+            #endregion
         }
 
         private void SetAlarm(AlarmManager alarm, long alarmTime, PendingIntent pendingIntent)
@@ -375,24 +378,38 @@ namespace Iara
             }
         }
 
-        private Calendar BuildCalendar(int dayOfWeek, SQLiteModels.PersonalTask personalTask)
+        private long TimeMillis(SQLiteModels.PersonalTask personalTask)
         {
-            Calendar alarmCalendar = Calendar.Instance;
-            if (personalTask.taskDay.Hour >= 0 && personalTask.taskDay.Hour <= 12)
-            {
-                alarmCalendar.Set(CalendarField.AmPm, Calendar.Am);
-            }
-            else
-            {
-                alarmCalendar.Set(CalendarField.AmPm, Calendar.Pm);
-            }
-            alarmCalendar.Set(CalendarField.DayOfWeek, dayOfWeek-1);
-            alarmCalendar.Set(CalendarField.Hour, personalTask.taskDay.Hour);
-            alarmCalendar.Set(CalendarField.Minute, personalTask.taskDay.Minute);
-            alarmCalendar.Set(CalendarField.Second, 0);
+            DateTime utcAlarmTime = TimeZoneInfo.ConvertTimeToUtc(new DateTime(personalTask.taskDay.Ticks, DateTimeKind.Local));
+            long timeMillis = (long)(utcAlarmTime - Jan1st1970).TotalMilliseconds;
 
-            return alarmCalendar;
+            return timeMillis;
         }
+
+        //private Calendar BuildCalendar(DayOfWeek dayOfWeek, SQLiteModels.PersonalTask personalTask)
+        //{
+        //    DateTime utcAlarmTime = TimeZoneInfo.ConvertTimeToUtc(new DateTime(personalTask.taskDay.Ticks, DateTimeKind.Local));
+        //    long timeMillis = (long)(utcAlarmTime - Jan1st1970).TotalMilliseconds;
+
+        //    Calendar alarmCalendar = Calendar.Instance;
+        //    if (personalTask.taskDay.Hour >= 0 && personalTask.taskDay.Hour <= 12)
+        //    {
+        //        alarmCalendar.Set(CalendarField.AmPm, Calendar.Am);
+        //    }
+        //    else
+        //    {
+        //        alarmCalendar.Set(CalendarField.AmPm, Calendar.Pm);
+        //    }
+        //    alarmCalendar.Set(CalendarField.DayOfWeek, (int)dayOfWeek);
+        //    //alarmCalendar.Set(CalendarField.DayOfMonth, DateTime.Now.Day + GetNextWeekday(dayOfWeek));
+        //    //DateTime date = Convert.ToDateTime(personalTask.taskDay.ToString("dd/MM/yyyy, hh:mm:ss tt"));
+        //    alarmCalendar.TimeInMillis  = System.CurrentTimeMillis();
+        //    alarmCalendar.Set(CalendarField.HourOfDay, personalTask.taskDay.Hour);
+        //    alarmCalendar.Set(CalendarField.Minute, personalTask.taskDay.Minute);
+        //    //alarmCalendar.Set(CalendarField.Second, 0);
+
+        //    return alarmCalendar;
+        //}
 
         private List<string> BuildtaskItens(SQLiteModels.PersonalTask personalTask)
         {

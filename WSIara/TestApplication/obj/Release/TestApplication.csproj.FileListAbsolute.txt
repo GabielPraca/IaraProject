@@ -1,0 +1,15 @@
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Release\TestApplication.exe.config
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Release\TestApplication.exe
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Release\TestApplication.pdb
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Release\IaraModels.dll
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Release\IaraWrapper.dll
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Release\Newtonsoft.Json.dll
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Release\IaraWrapper.pdb
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Release\IaraWrapper.dll.config
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Release\Newtonsoft.Json.xml
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\obj\Release\TestApplication.csprojResolveAssemblyReference.cache
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\obj\Release\TestApplication.frmTests.resources
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\obj\Release\TestApplication.Properties.Resources.resources
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\obj\Release\TestApplication.csproj.GenerateResource.Cache
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\obj\Release\TestApplication.exe
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\obj\Release\TestApplication.pdb

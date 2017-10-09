@@ -326,5 +326,6 @@ C:\Projetos\C#\IaraProject\Iara\Iara\obj\Debug\android\assets\Xamarin.Forms.Plat
 C:\Projetos\C#\IaraProject\Iara\Iara\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\Projetos\C#\IaraProject\Iara\Iara\bin\Debug\IaraModels.pdb
 C:\Projetos\C#\IaraProject\Iara\Iara\bin\Debug\IaraModels.dll.mdb
+C:\Projetos\C#\IaraProject\Iara\Iara\obj\Debug\android\assets\IaraModels.dll.mdb
 C:\Projetos\C#\IaraProject\Iara\Iara\obj\Debug\Iara.dll.mdb
 C:\Projetos\C#\IaraProject\Iara\Iara\bin\Debug\Iara.dll.mdb

@@ -13,6 +13,7 @@ namespace Iara
     class NotificationFragment : DialogFragment
     {
         private Button btnCancelAlarm;
+        private Button btnPending;
         private TextView txtTitle;
         private TextView txtExtra;
 
@@ -26,10 +27,12 @@ namespace Iara
             {
                 base.OnCreateView(inflater, container, savedInstanceState);
 
-                var view = inflater.Inflate(Resource.Layout.NotificationFragment, container, true);//old false
+                var view = inflater.Inflate(Resource.Layout.NotificationFragment, container, true);
 
                 btnCancelAlarm = view.FindViewById<Button>(Resource.Id.btnCancelAlarm);
                 btnCancelAlarm.Click += btnCancelAlarm_Click;
+                btnPending = view.FindViewById<Button>(Resource.Id.btnPending);
+                btnPending.Click += btnPending_Click;
 
                 txtTitle = view.FindViewById<TextView>(Resource.Id.txtTitle);
                 txtExtra = view.FindViewById<TextView>(Resource.Id.txtExtra);
@@ -40,6 +43,14 @@ namespace Iara
                 return view;
             }
             return null;
+        }
+
+        private void btnPending_Click(object sender, EventArgs e)
+        {
+            AlarmRingtone.StopRingtone(Application.Context);
+            TaskTransporter.ResetTaskTransporter();
+
+            Activity.FragmentManager.BeginTransaction().Remove(this).Commit();
         }
 
         private void btnCancelAlarm_Click(object sender, EventArgs e)
@@ -58,9 +69,10 @@ namespace Iara
                    Config.loggedUser.email).Where(p => p.description == TaskTransporter.itens[0] &&
                    String.Concat(p.taskDay.Hour.ToString("00"), ":", p.taskDay.Minute.ToString("00")) == TaskTransporter.itens[1]).FirstOrDefault();
 
-            if (pt != null)
+            if (pt != null && !pt.repeat)
             {
                 pt.finalized = true;
+                pt.synchronizedInToServer = false;
                 BODatabaseManager.UpdatePersonalTask(pt);
             }
         }

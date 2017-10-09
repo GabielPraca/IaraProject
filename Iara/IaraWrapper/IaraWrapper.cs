@@ -21,11 +21,16 @@ namespace IaraWrapper
         public IaraWrapper(string email, string pass)
         {
             client.DefaultRequestHeaders.Accept.Clear();
-            client.BaseAddress = new Uri("http://169.254.80.80:80/IaraAPI/");//169.254.80.80- 192.168.1.43
+            client.BaseAddress = new Uri("https://wsiara.azurewebsites.net/");//IIS Port = http://169.254.80.80:80, local = http://localhost:53795/
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             client.Timeout = TimeSpan.FromMinutes(5);
 
             _auth = UserAuthentication(email, pass);
+        }
+
+        public bool IsAuthenticated()
+        {
+            return authenticated;
         }
 
         #region User
@@ -33,7 +38,7 @@ namespace IaraWrapper
         {
             try
             {
-                if(GetUser(user.email) != null)
+                if (GetUser(user.email) != null)
                 {
                     return null;
                 }
@@ -42,7 +47,7 @@ namespace IaraWrapper
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage response = client.PostAsync(Path.Combine(apiUserPath, "SaveUser"), content).Result;
-                response.EnsureSuccessStatusCode();
+                //response.EnsureSuccessStatusCode();
                 if (response.IsSuccessStatusCode)
                 {
                     if (!authenticated)
@@ -55,7 +60,7 @@ namespace IaraWrapper
                     return false;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -119,7 +124,7 @@ namespace IaraWrapper
             try
             {
                 HttpResponseMessage response = client.GetAsync(Path.Combine(apiUserPath, email, "GetUser")).Result;
-                response.EnsureSuccessStatusCode();
+                //response.EnsureSuccessStatusCode();
                 if (response.IsSuccessStatusCode)
                 {
                     //return response.Content.ReadAsAsync<IaraModels.User>().Result;

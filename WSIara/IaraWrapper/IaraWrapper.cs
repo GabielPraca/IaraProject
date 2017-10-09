@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace IaraWrapper
@@ -19,18 +21,27 @@ namespace IaraWrapper
         public IaraWrapper(string email, string pass)
         {
             client.DefaultRequestHeaders.Accept.Clear();
-            client.BaseAddress = new Uri("http://NOTE-GAB/IaraAPI/");//localhost:53795
+            client.BaseAddress = new Uri("http://169.254.80.80:80/IaraAPI/");//IIS Port = http://169.254.80.80:80, local = http://localhost:53795/
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            client.Timeout = TimeSpan.FromMinutes(5);
 
             _auth = UserAuthentication(email, pass);
         }
 
         #region User
-        public bool SaveUser(IaraModels.User user)
+        public bool? SaveUser(IaraModels.User user)
         {
             try
             {
-                HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiUserPath, "SaveUser"), user).Result;
+                if(GetUser(user.email) != null)
+                {
+                    return null;
+                }
+
+                var json = JsonConvert.SerializeObject(user);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = client.PostAsync(Path.Combine(apiUserPath, "SaveUser"), content).Result;
                 response.EnsureSuccessStatusCode();
                 if (response.IsSuccessStatusCode)
                 {
@@ -56,7 +67,10 @@ namespace IaraWrapper
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiUserPath, "UpdateUser"), user).Result;
+                    var json = JsonConvert.SerializeObject(user);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = client.PostAsync(Path.Combine(apiUserPath, "UpdateUser"), content).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -108,7 +122,8 @@ namespace IaraWrapper
                 response.EnsureSuccessStatusCode();
                 if (response.IsSuccessStatusCode)
                 {
-                    return response.Content.ReadAsAsync<IaraModels.User>().Result;
+                    //return response.Content.ReadAsAsync<IaraModels.User>().Result;
+                    return JsonConvert.DeserializeObject<IaraModels.User>(response.Content.ReadAsStringAsync().Result);
                 }
                 else
                 {
@@ -125,7 +140,7 @@ namespace IaraWrapper
         {
             try
             {
-                IaraModels.User ret = this.GetUser(email);
+                IaraModels.User ret = GetUser(email);
 
                 if (ret == null)
                 {
@@ -146,7 +161,7 @@ namespace IaraWrapper
             catch (Exception ex)
             {
                 authenticated = false;
-                throw ex;
+                return "Erro";
             }
         }
         #endregion
@@ -158,7 +173,10 @@ namespace IaraWrapper
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "SavePersonalTask"), task).Result;
+                    var json = JsonConvert.SerializeObject(task);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = client.PostAsync(Path.Combine(apiPersonalTaskPath, "SavePersonalTask"), content).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -183,7 +201,10 @@ namespace IaraWrapper
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "SavePersonalTasks"), tasks).Result;
+                    var json = JsonConvert.SerializeObject(tasks);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = client.PostAsync(Path.Combine(apiPersonalTaskPath, "SavePersonalTasks"), content).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -196,7 +217,7 @@ namespace IaraWrapper
                 }
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -213,7 +234,8 @@ namespace IaraWrapper
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
-                        return response.Content.ReadAsAsync<List<IaraModels.PersonalTask>>().Result;
+                        return JsonConvert.DeserializeObject<List<IaraModels.PersonalTask>>(response.Content.ReadAsStringAsync().Result);
+                        //return response.Content.ReadAsAsync<List<IaraModels.PersonalTask>>().Result;
                     }
                     else
                     {
@@ -238,7 +260,8 @@ namespace IaraWrapper
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
-                        return response.Content.ReadAsAsync<List<IaraModels.PersonalTask>>().Result;
+                        return JsonConvert.DeserializeObject<List<IaraModels.PersonalTask>>(response.Content.ReadAsStringAsync().Result);
+                        //return response.Content.ReadAsAsync<List<IaraModels.PersonalTask>>().Result;
                     }
                     else
                     {
@@ -259,7 +282,10 @@ namespace IaraWrapper
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "UpdatePersonalTask"), task).Result;
+                    var json = JsonConvert.SerializeObject(task);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = client.PostAsync(Path.Combine(apiPersonalTaskPath, "UpdatePersonalTask"), content).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -284,7 +310,10 @@ namespace IaraWrapper
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "DeletePersonalTask"), task).Result;
+                    var json = JsonConvert.SerializeObject(task);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = client.PostAsync(Path.Combine(apiPersonalTaskPath, "DeletePersonalTask"), content).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -309,7 +338,10 @@ namespace IaraWrapper
             {
                 if (authenticated)
                 {
-                    HttpResponseMessage response = client.PostAsJsonAsync(Path.Combine(apiPersonalTaskPath, "DeletePersonalTasks"), tasks).Result;
+                    var json = JsonConvert.SerializeObject(tasks);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = client.PostAsync(Path.Combine(apiPersonalTaskPath, "DeletePersonalTasks"), content).Result;
                     response.EnsureSuccessStatusCode();
                     if (response.IsSuccessStatusCode)
                     {
@@ -322,7 +354,7 @@ namespace IaraWrapper
                 }
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

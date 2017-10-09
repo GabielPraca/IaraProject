@@ -5,6 +5,7 @@ using Android.App;
 using Android.Content;
 using Android.Support.V7.App;
 using DatabaseManager;
+using System;
 
 namespace Iara
 {
@@ -43,6 +44,15 @@ namespace Iara
                     //18-09-2017 AlarmRingtone.PlayRingtone(context);
 
                     NotificationManager manager = (NotificationManager)context.GetSystemService(Context.NotificationService);
+                    var oldNotification = manager.GetActiveNotifications();
+                    if (oldNotification != null)
+                    {
+                        foreach (var notification in oldNotification)
+                        {
+                            notification.Dispose();
+                        }
+                    }
+
                     manager.Notify(1, builder.Build());
                 }
             }

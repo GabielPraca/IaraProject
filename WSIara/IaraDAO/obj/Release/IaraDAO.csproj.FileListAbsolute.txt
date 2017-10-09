@@ -1,0 +1,11 @@
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Release\IaraDAO.dll.config
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Release\IaraDAO.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Release\IaraDAO.pdb
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Release\EntityFramework.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Release\EntityFramework.SqlServer.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Release\IaraModels.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Release\EntityFramework.xml
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\bin\Release\EntityFramework.SqlServer.xml
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\obj\Release\IaraDAO.csprojResolveAssemblyReference.cache
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\obj\Release\IaraDAO.dll
+C:\Projetos\C#\IaraProject\WSIara\IaraDAO\obj\Release\IaraDAO.pdb

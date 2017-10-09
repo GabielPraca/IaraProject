@@ -14,11 +14,10 @@ C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Debug\TestApplication.exe
 C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Debug\TestApplication.pdb
 C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Debug\IaraModels.dll
 C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Debug\IaraWrapper.dll
-C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Debug\System.Net.Http.Formatting.dll
 C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Debug\Newtonsoft.Json.dll
 C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Debug\IaraWrapper.pdb
 C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Debug\IaraWrapper.dll.config
-C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Debug\System.Net.Http.Formatting.xml
+C:\Projetos\C#\IaraProject\WSIara\TestApplication\bin\Debug\Newtonsoft.Json.xml
 C:\Projetos\C#\IaraProject\WSIara\TestApplication\obj\Debug\TestApplication.csprojResolveAssemblyReference.cache
 C:\Projetos\C#\IaraProject\WSIara\TestApplication\obj\Debug\TestApplication.frmTests.resources
 C:\Projetos\C#\IaraProject\WSIara\TestApplication\obj\Debug\TestApplication.Properties.Resources.resources

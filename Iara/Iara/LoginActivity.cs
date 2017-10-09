@@ -2,6 +2,8 @@
 using Android.Widget;
 using Android.OS;
 using System;
+using IaraWrapper;
+using System.Collections.Generic;
 
 namespace Iara
 {
@@ -42,7 +44,57 @@ namespace Iara
             }
             else
             {
-                Toast.MakeText(ApplicationContext, authAnswer, ToastLength.Short).Show();
+                IaraWrapper.IaraWrapper iw = new IaraWrapper.IaraWrapper(edtEmail.Text, edtPass.Text);
+
+                if (iw.IsAuthenticated())
+                {
+                    //pega o usuário existente
+                    IaraModels.User userToAdd = iw.GetUser(edtEmail.Text);
+                    //Converte para o modelo do SQLite
+                    SQLiteModels.User user = new SQLiteModels.User();
+                    user.email = userToAdd.email;
+                    user.userName = userToAdd.userName;
+                    user.password = userToAdd.password;
+                    user.updtDTime = userToAdd.updtDTime;
+                    user.synchronizedInToMobile = userToAdd.synchronizedInToMobile;
+                    user.synchronizedInToServer = userToAdd.synchronizedInToServer;
+                    //Salva no SQLite
+                    DatabaseManager.BODatabaseManager.CreateUser(user);
+
+                    //Pega as tarefas para adicionar
+                    List<IaraModels.PersonalTask> ptsToAdd = iw.GetAllActivePersonalTasks(edtEmail.Text);
+
+                    foreach(var pt in ptsToAdd)
+                    {
+                        SQLiteModels.PersonalTask ptToAdd = new SQLiteModels.PersonalTask()
+                        {
+                            email = pt.email,
+                            deleted = pt.deleted,
+                            finalized = pt.finalized,
+                            description = pt.description,
+                            repeat = pt.repeat,
+                            synchronizedInToServer = pt.synchronizedInToServer,
+                            synchronizedInToMobile = pt.synchronizedInToMobile,
+                            taskDay = pt.taskDay,
+                            fri = pt.fri,
+                            mon = pt.mon,
+                            sat = pt.sat,
+                            sun = pt.sun,
+                            thu = pt.thu,
+                            tue = pt.tue,
+                            wed = pt.wed
+                        };
+                        DatabaseManager.BODatabaseManager.CreatePersonalTask(ptToAdd);
+                    }
+
+                    Config.loggedUser = DatabaseManager.BODatabaseManager.GetUser(edtEmail.Text);
+                    StartActivity(typeof(RootActivity));
+                    Finish();
+                }
+                else
+                {
+                    Toast.MakeText(ApplicationContext, authAnswer, ToastLength.Short).Show();
+                }
             }           
         }
 

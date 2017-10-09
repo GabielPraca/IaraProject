@@ -5,6 +5,7 @@ using System.Linq;
 using DatabaseManager;
 using System.Threading.Tasks;
 using System.Timers;
+using Android.App;
 
 namespace Iara.Workers
 {

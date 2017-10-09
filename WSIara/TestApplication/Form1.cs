@@ -68,5 +68,38 @@ namespace TestApplication
                 lblUpdtUserRet.Text = iw.UpdateUser(user).ToString();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            IaraWrapper.IaraWrapper iw = new IaraWrapper.IaraWrapper(txtEmailUpdt.Text, txtPassUpdt.Text);
+
+            List<IaraModels.PersonalTask> list = iw.GetAllActivePersonalTasks(txtEmailUpdt.Text);
+
+            foreach(IaraModels.PersonalTask pt in list)
+            {
+                pt.sat = false;
+            }
+
+            list.Add(new IaraModels.PersonalTask()
+            {
+                email = String.Concat("q@q.com"),
+                deleted = false,
+                description = "novo",
+                finalized = false,
+                fri = false,
+                mon = true,
+                repeat = false,
+                sat = false,
+                sun = false,
+                synchronizedInToMobile = true,
+                synchronizedInToServer = true,
+                taskDay = DateTime.Now,
+                thu = false,
+                tue = false,
+                wed = false
+            });
+
+            iw.SavePersonalTasks(list);
+        }
     }
 }

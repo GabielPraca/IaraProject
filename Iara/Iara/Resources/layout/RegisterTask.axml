@@ -10,18 +10,36 @@
     p1:id="@+id/linearLayout1"
     p1:background="#092B5A"
     p1:visibility="visible">
-    <TextView
-        p1:text="00:00"
-        p1:textAppearance="?android:attr/textAppearanceMedium"
-        p1:textColor="#ffffff"
-        p1:textStyle="bold"
-        p1:textSize="55dp"
-        p1:id="@+id/txtTime"
-        p1:gravity="center_horizontal"
+    <LinearLayout
+        p1:id="@+id/buttons"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:paddingTop="10dp"
-        p1:paddingBottom="10dp" />
+        p1:orientation="horizontal"
+        p1:weightSum="50"
+        p1:paddingRight="0dp"
+        p1:layout_marginTop="25dp">
+        <TextView
+            p1:text="00:00"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:textColor="#ffffff"
+            p1:textStyle="bold"
+            p1:textSize="55dp"
+            p1:id="@+id/txtTime"
+            p1:gravity="center_horizontal"
+            p1:layout_width="wrap_content"
+            p1:layout_height="wrap_content"
+            p1:paddingTop="10dp"
+            p1:paddingBottom="10dp"
+            p1:layout_marginLeft="60dp" />
+        <CheckBox
+            p1:text="Repetir"
+            p1:id="@+id/ckRep"
+            p1:textStyle="bold"
+            p1:textSize="15dp"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:translationX="50dp" />
+    </LinearLayout>
     <LinearLayout
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
@@ -65,16 +83,6 @@
         p1:gravity="center"
         p1:layout_marginTop="20dp"
         p1:visibility="visible">
-        <CheckBox
-            p1:text="Repetir"
-            p1:id="@+id/ckRep"
-            p1:textStyle="bold"
-            p1:textSize="15dp"
-            p1:layout_width="wrap_content"
-            p1:layout_height="match_parent"
-            p1:layout_gravity="left"
-            p1:layout_marginLeft="35dp"
-            p1:layout_marginBottom="10dp" />
         <LinearLayout
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
