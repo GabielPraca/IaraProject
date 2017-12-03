@@ -11,33 +11,45 @@ namespace Iara.Workers
 {
     public static class AlarmWorker
     {
-        //private static IaraWrapper.IaraWrapper iw = null;
+        private static IaraWrapper.IaraWrapper iw = null;
 
         //public static List<SQLiteModels.PersonalTask> personalTasks = null;
-        //private static readonly DateTime Jan1st1970 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-        //private static bool weekly = false;
+        public static SQLiteModels.PersonalTask personalTask = null;
+        private static readonly DateTime Jan1st1970 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        private static bool weekly = false;
 
-        //public static void Run(object source, ElapsedEventArgs e)
-        //{
-        //    if (TaskTransporter.needRefresh)
+        private static bool running = false;
+
+        public static void Run(object source, ElapsedEventArgs e)
+        {
+        //    if (!running)
         //    {
+        //        running = true;
         //        iw = new IaraWrapper.IaraWrapper(Config.loggedUser.email, Config.loggedUser.password);
 
         //        //Pega todas as tarefas
         //        GetTasksToAlert();
 
-        //        TaskTransporter.needRefresh = false;
+        //        running = false;
         //    }
         //}
 
         //private static void GetTasksToAlert()
         //{
-        //    personalTasks = DatabaseManager.BODatabaseManager.GetAllActivePersonalTasks(Config.loggedUser.email).OrderBy(p => p.taskDay).ToList();
 
-        //    foreach(SQLiteModels.PersonalTask pst in personalTasks)
-        //    {
-        //        StartAlarm(pst.repeat, pst);
-        //    }
+        //    personalTask = DatabaseManager.BODatabaseManager.GetAllActivePersonalTasks(Config.loggedUser.email).Where(
+        //                                                                                                        p => p.taskDay > DateTime.Now && !p.finalized).OrderBy(
+        //                                                                                                        p => p.taskDay).ToList().FirstOrDefault();
+
+        //    StartAlarm(personalTask.repeat, personalTask);
+        //    //personalTasks = DatabaseManager.BODatabaseManager.GetAllActivePersonalTasks(Config.loggedUser.email).Where(
+        //    //                                                                                                    p => p.taskDay > DateTime.Now && !p.finalized).OrderBy(
+        //    //                                                                                                    p => p.taskDay).ToList();
+
+        //    //foreach (SQLiteModels.PersonalTask pst in personalTasks)
+        //    //{
+        //    //    StartAlarm(pst.repeat, pst);
+        //    //}
         //}
 
         //private static void StartAlarm(bool isRepeating, SQLiteModels.PersonalTask personalTask)
@@ -125,15 +137,15 @@ namespace Iara.Workers
 
         //    return alarmCalendar;
         //}
-        
+
         //private static bool VerifyTimerType(PersonalTask personalTask)
         //{
-        //    if(personalTask.fri || personalTask.mon || personalTask.sat || personalTask.sun || personalTask.thu || personalTask.tue || personalTask.wed)
+        //    if (personalTask.fri || personalTask.mon || personalTask.sat || personalTask.sun || personalTask.thu || personalTask.tue || personalTask.wed)
         //    {
         //        return true;
         //    }
 
         //    return false;
-        //}
+        }
     }
 }

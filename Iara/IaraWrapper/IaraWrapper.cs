@@ -21,7 +21,8 @@ namespace IaraWrapper
         public IaraWrapper(string email, string pass)
         {
             client.DefaultRequestHeaders.Accept.Clear();
-            client.BaseAddress = new Uri("https://wsiara.azurewebsites.net/");//IIS Port = http://169.254.80.80:80, local = http://localhost:53795/
+            //client.BaseAddress = new Uri("https://wsiara.azurewebsites.net/");//IIS Port = http://169.254.80.80:80, local = http://localhost:53795/
+            client.BaseAddress = new Uri("http://127.0.0.1:53795/");//IIS Port = http://169.254.80.80:80, local = http://localhost:53795/
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             client.Timeout = TimeSpan.FromMinutes(5);
 

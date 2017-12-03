@@ -33,20 +33,20 @@
         p1:gravity="center" />
     <LinearLayout
         p1:id="@+id/buttons"
-        p1:layout_width="match_parent"
+        p1:layout_width="wrap_content"
         p1:layout_height="wrap_content"
         p1:orientation="horizontal"
         p1:weightSum="50"
         p1:paddingRight="0dp"
-        p1:layout_marginTop="25dp">
+        p1:layout_marginTop="25dp"
+        p1:layout_gravity="center_horizontal">
         <Button
             p1:text="Encerrar"
             p1:id="@+id/btnCancelAlarm"
             p1:background="#0f4a9a"
             p1:gravity="center"
             p1:layout_width="wrap_content"
-            p1:layout_height="match_parent"
-            p1:layout_marginLeft="155dp" />
+            p1:layout_height="match_parent" />
         <Button
             p1:text="Pendente"
             p1:id="@+id/btnPending"

@@ -15,5 +15,7 @@ namespace Iara
     public static class Config
     {
         public static SQLiteModels.User loggedUser {get;set;}
+
+        public static AlarmManager alarm { get; set; }
     }
 }

@@ -7,11 +7,15 @@ using Android.Widget;
 using System.Linq;
 using DatabaseManager;
 using SQLiteModels;
+using Android.Content;
+using System.Collections.Generic;
 
 namespace Iara
 {
     class NotificationFragment : DialogFragment
     {
+        private static readonly DateTime Jan1st1970 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
         private Button btnCancelAlarm;
         private Button btnPending;
         private TextView txtTitle;
@@ -50,6 +54,8 @@ namespace Iara
             AlarmRingtone.StopRingtone(Application.Context);
             TaskTransporter.ResetTaskTransporter();
 
+            ReloadIntent();
+
             Activity.FragmentManager.BeginTransaction().Remove(this).Commit();
         }
 
@@ -59,6 +65,8 @@ namespace Iara
             AlarmRingtone.StopRingtone(Application.Context);
             FinishTask();
             TaskTransporter.ResetTaskTransporter();
+
+            ReloadIntent();
 
             Activity.FragmentManager.BeginTransaction().Remove(this).Commit();
         }
@@ -81,6 +89,44 @@ namespace Iara
         {
             Dialog.Window.RequestFeature(WindowFeatures.NoTitle);
             base.OnActivityCreated(savedInstanceState);
+        }
+
+        private void ReloadIntent()
+        {
+            AlarmManager alarm = Config.alarm;
+            Intent myIntent;
+            PendingIntent pendingIntent;
+
+            myIntent = new Intent(Application.Context, typeof(AlarmNotificationReceiver));
+
+            PersonalTask taskToLoad = DatabaseManager.BODatabaseManager.GetAllActivePersonalTasks(Config.loggedUser.email).OrderBy(t => t.taskDay).Where(t => t.taskDay > DateTime.Now && !t.finalized).FirstOrDefault();
+
+            if(taskToLoad != null)
+            {
+                myIntent.PutStringArrayListExtra("task", BuildtaskItens(taskToLoad).ToArray<string>());
+                pendingIntent = PendingIntent.GetBroadcast(Application.Context, 0, myIntent, PendingIntentFlags.UpdateCurrent);
+
+                alarm.Set(AlarmType.RtcWakeup, TimeMillis(taskToLoad), pendingIntent);
+            }
+        }
+
+        private List<string> BuildtaskItens(SQLiteModels.PersonalTask personalTask)
+        {
+            List<string> ret = new List<string>();
+            if (personalTask != null)
+            {
+                ret.Add(personalTask.description);
+                ret.Add(String.Concat(personalTask.taskDay.Hour.ToString("00"), ":", personalTask.taskDay.Minute.ToString("00")));
+            }
+            return ret;
+        }
+
+        private long TimeMillis(SQLiteModels.PersonalTask personalTask)
+        {
+            DateTime utcAlarmTime = TimeZoneInfo.ConvertTimeToUtc(new DateTime(personalTask.taskDay.Ticks, DateTimeKind.Local));
+            long timeMillis = (long)(utcAlarmTime - Jan1st1970).TotalMilliseconds;
+
+            return timeMillis;
         }
     }
 }

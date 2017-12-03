@@ -306,16 +306,21 @@ namespace Iara
 
         private void StartAlarm(bool isRepeating, SQLiteModels.PersonalTask personalTask)
         {
-            AlarmManager alarm = (AlarmManager)GetSystemService(Context.AlarmService);
-            Intent myIntent;
-            PendingIntent pendingIntent;
+            if(personalTask.taskDay > DateTime.Now)
+            {
+                AlarmManager alarm = (AlarmManager)GetSystemService(Context.AlarmService);
+                Config.alarm = alarm;
+                Intent myIntent;
+                PendingIntent pendingIntent;
 
-            myIntent = new Intent(Application.Context, typeof(AlarmNotificationReceiver));
+                myIntent = new Intent(Application.Context, typeof(AlarmNotificationReceiver));
 
-            myIntent.PutStringArrayListExtra("task", BuildtaskItens(personalTask).ToArray<string>());
-            pendingIntent = PendingIntent.GetBroadcast(Application.Context, 0, myIntent, PendingIntentFlags.UpdateCurrent);
+                myIntent.PutStringArrayListExtra("task", BuildtaskItens(personalTask).ToArray<string>());
+                myIntent.SetAction(TimeMillis(DateTime.Now).ToString());
+                pendingIntent = PendingIntent.GetBroadcast(Application.Context, 0, myIntent, PendingIntentFlags.UpdateCurrent);
 
-            SetAlarm(alarm, TimeMillis(personalTask), pendingIntent);
+                SetAlarm(alarm, TimeMillis(personalTask), pendingIntent);
+            }
             #region OLD
             //if (actualTaskType == eTaskType.month)
             //{
@@ -381,6 +386,13 @@ namespace Iara
         private long TimeMillis(SQLiteModels.PersonalTask personalTask)
         {
             DateTime utcAlarmTime = TimeZoneInfo.ConvertTimeToUtc(new DateTime(personalTask.taskDay.Ticks, DateTimeKind.Local));
+            long timeMillis = (long)(utcAlarmTime - Jan1st1970).TotalMilliseconds;
+
+            return timeMillis;
+        }
+        private long TimeMillis(DateTime dt)
+        {
+            DateTime utcAlarmTime = TimeZoneInfo.ConvertTimeToUtc(new DateTime(dt.Ticks, DateTimeKind.Local));
             long timeMillis = (long)(utcAlarmTime - Jan1st1970).TotalMilliseconds;
 
             return timeMillis;
