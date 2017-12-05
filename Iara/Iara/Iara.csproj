@@ -53,8 +53,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\WSIara\IaraModels\bin\Debug\IaraModels.dll</HintPath>
     </Reference>
-    <Reference Include="IaraWrapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="IaraWrapper">
       <HintPath>..\IaraWrapper\bin\Debug\IaraWrapper.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />

@@ -13,7 +13,6 @@ C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\bin\Debug\System.Web.Http.WebHost.
 C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\obj\Debug\IaraWrapper.csprojResolveAssemblyReference.cache
 C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\obj\Debug\IaraWrapper.dll
 C:\Projetos\C#\IaraProject\WSIara\IaraWrapper\obj\Debug\IaraWrapper.pdb
-C:\Projetos\C#\IaraProject\Iara\IaraWrapper\obj\Debug\IaraWrapper.csprojResolveAssemblyReference.cache
 C:\Projetos\C#\IaraProject\Iara\IaraWrapper\bin\Debug\IaraWrapper.dll.config
 C:\Projetos\C#\IaraProject\Iara\IaraWrapper\bin\Debug\IaraWrapper.dll
 C:\Projetos\C#\IaraProject\Iara\IaraWrapper\bin\Debug\IaraWrapper.pdb
@@ -29,3 +28,4 @@ C:\Projetos\C#\IaraProject\Iara\IaraWrapper\bin\Debug\System.Web.Http.xml
 C:\Projetos\C#\IaraProject\Iara\IaraWrapper\bin\Debug\System.Web.Http.WebHost.xml
 C:\Projetos\C#\IaraProject\Iara\IaraWrapper\obj\Debug\IaraWrapper.dll
 C:\Projetos\C#\IaraProject\Iara\IaraWrapper\obj\Debug\IaraWrapper.pdb
+C:\Projetos\C#\IaraProject\Iara\IaraWrapper\obj\Debug\IaraWrapper.csprojResolveAssemblyReference.cache

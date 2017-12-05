@@ -44,6 +44,15 @@ namespace Iara
                 txtTitle.Text = TaskTransporter.itens[0];
                 txtExtra.Text = TaskTransporter.itens[1];
 
+                if (pt.repeat)
+                {
+                    btnCancelAlarm.Enabled = false;
+                }
+                else
+                {
+                    btnCancelAlarm.Enabled = true;
+                }
+
                 return view;
             }
             return null;
@@ -104,10 +113,18 @@ namespace Iara
             if(taskToLoad != null)
             {
                 myIntent.PutStringArrayListExtra("task", BuildtaskItens(taskToLoad).ToArray<string>());
+                myIntent.SetAction(TimeMillis(DateTime.Now).ToString());
                 pendingIntent = PendingIntent.GetBroadcast(Application.Context, 0, myIntent, PendingIntentFlags.UpdateCurrent);
 
                 alarm.Set(AlarmType.RtcWakeup, TimeMillis(taskToLoad), pendingIntent);
             }
+        }
+        private long TimeMillis(DateTime dt)
+        {
+            DateTime utcAlarmTime = TimeZoneInfo.ConvertTimeToUtc(new DateTime(dt.Ticks, DateTimeKind.Local));
+            long timeMillis = (long)(utcAlarmTime - Jan1st1970).TotalMilliseconds;
+
+            return timeMillis;
         }
 
         private List<string> BuildtaskItens(SQLiteModels.PersonalTask personalTask)

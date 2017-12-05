@@ -137,7 +137,7 @@ namespace Iara.Workers
             List<IaraModels.PersonalTask> tasksToDeleteServer = iw.GetAllPersonalTasks(Config.loggedUser.email);
             if (tasksToDeleteServer != null && tasksToDeleteServer.Count > 0)
             {
-                tasksToDeleteServer = tasksToDeleteServer.Where(p => p.deleted).ToList();
+                tasksToDeleteServer = tasksToDeleteServer.Where(p => p.deleted).Where(p => p.deleted).ToList();
             }
 
             //Deleta do Servidor

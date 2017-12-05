@@ -209,6 +209,7 @@ namespace Iara
         private void btnMonth_Click(object sender, EventArgs e)
         {
             weekly = false;
+            ckRep.Visibility = ViewStates.Visible;
             actualTaskType = eTaskType.month;
             componentMonth.Visibility = ViewStates.Visible;
             componentWeek.Visibility = ViewStates.Gone;
@@ -217,6 +218,8 @@ namespace Iara
         private void btnWeek_Click(object sender, EventArgs e)
         {
             weekly = true;
+            ckRep.Checked = true;
+            ckRep.Visibility = ViewStates.Invisible;
             actualTaskType = eTaskType.week;
             componentWeek.Visibility = ViewStates.Visible;
             componentMonth.Visibility = ViewStates.Gone;

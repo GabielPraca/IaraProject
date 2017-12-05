@@ -1,5 +1,3 @@
-C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\EntityFramework.dll
-C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\EntityFramework.xml
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\ApplicationInsights.config
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\roslyn\csc.exe
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\roslyn\csc.exe.config
@@ -53,6 +51,7 @@ C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\WSIara.dll.config
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\WSIara.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\WSIara.pdb
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\Antlr3.Runtime.dll
+C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\EntityFramework.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\EntityFramework.SqlServer.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\IaraDAO.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\IaraModels.dll
@@ -82,6 +81,7 @@ C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Web.WebPages.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\System.Web.WebPages.Razor.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\WebGrease.dll
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\Antlr3.Runtime.pdb
+C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\EntityFramework.xml
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\EntityFramework.SqlServer.xml
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\IaraDAO.pdb
 C:\Projetos\C#\IaraProject\WSIara\WSIara\bin\IaraDAO.dll.config

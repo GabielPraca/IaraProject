@@ -214,7 +214,9 @@ namespace Iara
         private void btnDel_Click(object sender, EventArgs e)
         {
             int pos = (int)(((Button)sender).GetTag(Resource.Id.btnDel));
+            mPersonalTasks[pos].repeat = false;
             mPersonalTasks[pos].deleted = true;
+            mPersonalTasks[pos].synchronizedInToServer = false;
             BODatabaseManager.UpdatePersonalTask(mPersonalTasks[pos]);
             UpdateData(BODatabaseManager.GetAllActivePersonalTasks(Config.loggedUser.email));
 
@@ -224,6 +226,7 @@ namespace Iara
         private void btnFinish_Click(object sender, EventArgs e)
         {
             int pos = (int)(((Button)sender).GetTag(Resource.Id.btnFinish));
+            mPersonalTasks[pos].repeat = false;
             mPersonalTasks[pos].finalized = true;
             mPersonalTasks[pos].synchronizedInToServer = false;
             BODatabaseManager.UpdatePersonalTask(mPersonalTasks[pos]);
